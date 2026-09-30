@@ -180,9 +180,9 @@ a.card span{color:var(--muted);font-size:13px}
       await run();
       $('verify').style.display = 'block';
       $('verify').innerHTML = ok
-        ? '✅ 你粘贴的 ' + algo + ' 校验和与这段文本<strong>匹配</strong>。'
-        : '❌ <strong>不匹配</strong>。粘贴的校验和是 ' + target.slice(0,16) + '…，而这段文本的 ' + algo + ' 是 ' + got.slice(0,16) + '…';
-      say(ok ? '✓ 校验和匹配' : '✗ 校验和不匹配', ok ? 'ok' : 'err');
+        ? '✅ The ' + algo + ' checksum you pasted <strong>matches</strong> this text.'
+        : '❌ <strong>No match.</strong> The pasted checksum is ' + target.slice(0,16) + '… but the ' + algo + ' of this text is ' + got.slice(0,16) + '…';
+      say(ok ? '✓ Checksum matches' : '✗ Checksum does not match', ok ? 'ok' : 'err');
     }, 60);
   });
 })();
