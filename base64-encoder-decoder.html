@@ -161,7 +161,7 @@ a.card span{color:var(--muted);font-size:13px}
   function wrap76(s){ return s.replace(/(.{76})/g, '$1\n'); }
   $('enc').onclick = function(){
     var v = input.value;
-    if (!v) { say('Type something to encode.', 'err'); out.textContent = ''; return; }
+    if (!v) { say('✗ Type something to encode.', 'err'); out.textContent = ''; return; }
     var r = toB64(v, $('urlsafe').checked);
     if ($('wrap').checked) r = wrap76(r);
     out.textContent = r;
@@ -169,7 +169,7 @@ a.card span{color:var(--muted);font-size:13px}
   };
   $('dec').onclick = function(){
     var v = input.value;
-    if (!v.trim()) { say('Paste Base64 to decode.', 'err'); out.textContent = ''; return; }
+    if (!v.trim()) { say('✗ Paste Base64 to decode.', 'err'); out.textContent = ''; return; }
     try {
       var r = fromB64(v);
       out.textContent = r;
