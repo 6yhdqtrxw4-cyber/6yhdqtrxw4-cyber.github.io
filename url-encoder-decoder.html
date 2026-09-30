@@ -146,7 +146,7 @@ a.card span{color:var(--muted);font-size:13px}
   var input = $('in'), out = $('out'), parts = $('parts');
   function encode(){
     var v = input.value;
-    if (!v) { say('Paste something to encode.', 'err'); out.textContent = ''; return; }
+    if (!v) { say('✗ Paste something to encode.', 'err'); out.textContent = ''; return; }
     var mode = $('mode').value, r;
     if (mode === 'component') r = encodeURIComponent(v);
     else if (mode === 'full') r = encodeURI(v);
@@ -159,7 +159,7 @@ a.card span{color:var(--muted);font-size:13px}
   }
   function decode(){
     var v = input.value.trim();
-    if (!v) { say('Paste something to decode.', 'err'); out.textContent = ''; return; }
+    if (!v) { say('✗ Paste something to decode.', 'err'); out.textContent = ''; return; }
     try {
       var r = decodeURIComponent(v.replace(/\+/g, ' '));
       out.textContent = r;
