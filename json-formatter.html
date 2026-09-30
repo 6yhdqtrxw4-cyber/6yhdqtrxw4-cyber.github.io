@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JSON Formatter &amp; Validator — Format, Minify and Check JSON Online</title>
+<meta name="description" content="Format, validate and minify JSON in your browser. Instant error messages with the exact position, key sorting, and no data ever uploaded."/>
+<meta name="keywords" content="json formatter, json validator, json beautifier, minify json, pretty print json, json checker"/>
+<link rel="canonical" href="https://6yhdqtrxw4-cyber.github.io/json-formatter.html"/>
+<meta property="og:title" content="JSON Formatter &amp; Validator — Format, Minify and Check JSON Online"/>
+<meta property="og:description" content="Format, validate and minify JSON in your browser. Instant error messages with the exact position, key sorting, and no data ever uploaded."/>
+<meta property="og:type" content="website"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"JSON Formatter & Validator","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Format, validate and minify JSON in your browser. Instant error messages with the exact position, key sorting, and no data ever uploaded."}
+</script>
+<style>
+:root{--bg:#ffffff;--soft:#f7f8fa;--panel:#ffffff;--text:#16181d;--muted:#5b6472;--border:#e4e7ec;--accent:#2563eb;--accent-soft:#eff4ff;--ok:#15803d;--err:#b91c1c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.site{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:5}
+header.site .wrap{display:flex;align-items:center;gap:14px;padding:12px 20px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:17px;letter-spacing:-.2px}
+.logo span{color:var(--accent)}
+header.site nav{margin-left:auto;display:flex;gap:14px;font-size:13.5px;flex-wrap:wrap}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover{color:var(--accent)}
+main{padding:34px 0 10px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.5px;margin-bottom:10px}
+.lead{color:var(--muted);font-size:16.5px;margin-bottom:24px;max-width:660px}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px}
+textarea,input[type=text],input[type=number],select{width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;line-height:1.6;color:var(--text);background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;outline:none}
+textarea{min-height:210px;resize:vertical}
+textarea:focus,input:focus,select:focus{border-color:var(--accent);background:#fff}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+button{font:inherit;font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:9px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer}
+button:hover{border-color:#c9d2e0}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.primary:hover{filter:brightness(1.07)}
+label.chk{display:flex;align-items:center;gap:7px;font-size:13.5px;color:var(--muted)}
+.out{margin-top:12px;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;min-height:52px;max-height:340px;overflow:auto}
+.status{font-size:13.5px;margin-top:10px}
+.status.ok{color:var(--ok)}.status.err{color:var(--err)}
+section.explain{margin-top:44px;padding-top:30px;border-top:1px solid var(--border)}
+section.explain h2{font-size:21px;margin:26px 0 10px;letter-spacing:-.2px}
+section.explain h2:first-child{margin-top:0}
+section.explain p,section.explain li{color:#333a45;font-size:15px}
+section.explain ul,section.explain ol{margin:10px 0 10px 22px}
+section.explain li{margin:5px 0}
+details{border-top:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:600;font-size:15px}
+details p{margin-top:8px;color:var(--muted);font-size:14.5px}
+footer.site{border-top:1px solid var(--border);margin-top:52px;padding:26px 0 40px;color:var(--muted);font-size:13.5px}
+footer.site a{color:var(--muted);text-decoration:none;margin-right:14px;display:inline-block}
+footer.site a:hover{color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}
+a.card{display:block;padding:14px 16px;border:1px solid var(--border);border-radius:11px;text-decoration:none;color:inherit;background:#fff}
+a.card:hover{border-color:#c9d2e0}
+a.card b{display:block;font-size:14.5px;margin-bottom:3px}
+a.card span{color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <div class="logo">Tool<span>Mint</span></div>
+  <nav>
+    <a href="/tools/">All tools</a>
+    <a href="/pdfmint/">PDF</a>
+    <a href="/pixmint/">Images</a>
+    <a href="/">Home</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <h1>JSON Formatter &amp; Validator</h1>
+  <p class="lead">Paste JSON to pretty-print it, minify it, or find out exactly what is wrong with it. Everything runs locally — your data never leaves the page.</p>
+
+  <div class="panel">
+    <textarea id="in" placeholder='{"name":"demo","items":[1,2,3],"nested":{"ok":true}}'></textarea>
+    <div class="row">
+      <button class="primary" id="fmt">Format</button>
+      <button id="min">Minify</button>
+      <button id="copy">Copy result</button>
+      <label class="chk"><input type="checkbox" id="sort"/> Sort keys A–Z</label>
+      <select id="indent" style="width:auto"><option value="2">2 spaces</option><option value="4">4 spaces</option><option value="tab">Tab</option></select>
+    </div>
+    <div class="out" id="out"></div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <section class="explain">
+    <h2>What this tool does</h2>
+    <p>It parses your JSON with the browser's own <code>JSON.parse</code> and then re-serialises it. That means three things happen at once: the text is validated, it is reformatted with consistent indentation, and any keys you do not need can be dropped by minifying. If the JSON is broken, the browser's parser reports the byte position of the problem, which is usually far more useful than "invalid JSON".</p>
+
+    <h2>When you would use it</h2>
+    <ul>
+      <li><strong>Reading an API response.</strong> Minified JSON from a server is one long line. Formatting it makes the structure visible.</li>
+      <li><strong>Debugging a config file.</strong> Invalid <code>package.json</code>, <code>tsconfig.json</code> or a cloud config usually fails with an unhelpful message — the exact position helps.</li>
+      <li><strong>Shrinking a payload.</strong> Minifying strips every byte of whitespace, which can cut a large document substantially.</li>
+      <li><strong>Comparing two files.</strong> Sorting keys A–Z makes two documents with the same content but different key order line up identically.</li>
+    </ul>
+
+    <h2>The mistakes this catches</h2>
+    <ul>
+      <li><strong>Trailing commas</strong> — legal in JavaScript object literals, illegal in JSON.</li>
+      <li><strong>Single quotes</strong> — JSON requires double quotes around both keys and string values.</li>
+      <li><strong>Unquoted keys</strong> — <code>{name: "x"}</code> is JavaScript, not JSON.</li>
+      <li><strong>Comments</strong> — <code>//</code> and <code>/* */</code> are not part of the JSON specification.</li>
+      <li><strong>Invisible characters</strong> — smart quotes pasted from a document editor, or a stray byte-order mark.</li>
+      <li><strong>Truncated output</strong> — a copy-paste that cut off mid-object.</li>
+    </ul>
+
+    <h2>Privacy</h2>
+    <p>There is no server involved. The text is parsed and re-serialised by JavaScript running in this tab, so nothing is transmitted. That matters when the payload contains tokens, personal data or internal configuration — the kind of content you should not paste into a random online formatter.</p>
+
+    <h2>FAQ</h2>
+    <details open><summary>Is my JSON uploaded anywhere?</summary><p>No. Parsing and formatting happen entirely in your browser. You can disconnect from the internet after the page loads and the tool keeps working.</p></details>
+    <details><summary>What does "Sort keys A–Z" change?</summary><p>It rebuilds every object with its keys in alphabetical order, recursively. The data is unchanged — only the order of keys. It is useful for making two files diffable.</p></details>
+    <details><summary>Can it handle very large files?</summary><p>Yes, up to the memory your browser tab has. Files above roughly 50&nbsp;MB may make the tab sluggish, since the whole document has to exist as a string and as an object at the same time.</p></details>
+    <details><summary>Does minifying change my data?</summary><p>No. Minifying only removes whitespace between tokens; every key and value is preserved exactly. The only visible difference is that numbers such as <code>1.0</code> become <code>1</code>, because JSON has a single number type.</p></details>
+  </section>
+</main>
+
+<section class="explain wrap" style="border-top:1px solid var(--border)">
+  <h2>Related tools</h2>
+  <div class="cards">
+    <a class="card" href="/base64-encoder-decoder.html"><b>Base64 Encoder &amp; Decoder</b><span>Encode or decode Base64 text, UTF-8 safe.</span></a>
+    <a class="card" href="/case-converter.html"><b>Case Converter</b><span>Convert between eight naming and letter cases.</span></a>
+    <a class="card" href="/url-encoder-decoder.html"><b>URL Encoder &amp; Decoder</b><span>Percent-encode and decode URLs and query strings.</span></a>
+    <a class="card" href="/word-counter.html"><b>Word &amp; Character Counter</b><span>Live word, character and reading-time counts.</span></a>
+  </div>
+</section>
+
+<footer class="site"><div class="wrap">
+  <a href="/tools/">All tools</a><a href="/pdfmint/">PDF tools</a><a href="/pixmint/">Image tools</a><a href="/">Home</a>
+  <p style="margin-top:10px">Everything runs in your browser. Nothing is uploaded.</p>
+</div></footer>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  function say(msg, cls){ var s = $('status'); if(!s) return; s.textContent = msg || ''; s.className = 'status' + (cls ? ' ' + cls : ''); }
+  function copy(text, btn){
+    navigator.clipboard.writeText(text).then(function(){
+      var old = btn.textContent; btn.textContent = '✓ Copied';
+      setTimeout(function(){ btn.textContent = old; }, 1400);
+    }).catch(function(){ say('Copy failed — select the text and copy manually.', 'err'); });
+  }
+  var input = $('in'), out = $('out');
+  function indentStr(){ var v = $('indent').value; return v === 'tab' ? '\t' : Number(v); }
+  function sortKeys(v){
+    if (Array.isArray(v)) return v.map(sortKeys);
+    if (v && typeof v === 'object') {
+      var o = {};
+      Object.keys(v).sort().forEach(function(k){ o[k] = sortKeys(v[k]); });
+      return o;
+    }
+    return v;
+  }
+  function run(minify){
+    var raw = input.value.trim();
+    if (!raw) { say('Paste some JSON first.', 'err'); out.textContent = ''; return; }
+    try {
+      var v = JSON.parse(raw);
+      if (!minify && $('sort').checked) v = sortKeys(v);
+      out.textContent = minify ? JSON.stringify(v) : JSON.stringify(v, null, indentStr());
+      var kb = (new TextEncoder().encode(out.textContent).length / 1024).toFixed(1);
+      say('✓ Valid JSON — ' + kb + ' KB output', 'ok');
+    } catch (e) {
+      out.textContent = '';
+      say('✗ ' + e.message, 'err');
+    }
+  }
+  $('fmt').onclick = function(){ run(false); };
+  $('min').onclick = function(){ run(true); };
+  $('copy').onclick = function(){ if (out.textContent) copy(out.textContent, $('copy')); };
+})();
+</script>
+</body>
+</html>
