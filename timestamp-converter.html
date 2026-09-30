@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Unix Timestamp Converter — Epoch to Date and Date to Epoch, Free</title>
+<meta name="description" content="Convert Unix timestamps to readable dates and back. Live current epoch, seconds or milliseconds, ISO 8601 and local time. Runs in your browser."/>
+<meta name="keywords" content="unix timestamp converter, epoch converter, timestamp to date, date to timestamp, epoch time, unix time"/>
+<link rel="canonical" href="https://6yhdqtrxw4-cyber.github.io/timestamp-converter.html"/>
+<meta property="og:title" content="Unix Timestamp Converter — Epoch to Date and Date to Epoch, Free"/>
+<meta property="og:description" content="Convert Unix timestamps to readable dates and back. Live current epoch, seconds or milliseconds, ISO 8601 and local time. Runs in your browser."/>
+<meta property="og:type" content="website"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Unix Timestamp Converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert Unix timestamps to readable dates and back. Live current epoch, seconds or milliseconds, ISO 8601 and local time. Runs in your browser."}
+</script>
+<style>
+:root{--bg:#ffffff;--soft:#f7f8fa;--panel:#ffffff;--text:#16181d;--muted:#5b6472;--border:#e4e7ec;--accent:#2563eb;--accent-soft:#eff4ff;--ok:#15803d;--err:#b91c1c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.site{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:5}
+header.site .wrap{display:flex;align-items:center;gap:14px;padding:12px 20px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:17px;letter-spacing:-.2px}
+.logo span{color:var(--accent)}
+header.site nav{margin-left:auto;display:flex;gap:14px;font-size:13.5px;flex-wrap:wrap}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover{color:var(--accent)}
+main{padding:34px 0 10px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.5px;margin-bottom:10px}
+.lead{color:var(--muted);font-size:16.5px;margin-bottom:24px;max-width:660px}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px}
+textarea,input[type=text],input[type=number],select{width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;line-height:1.6;color:var(--text);background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;outline:none}
+textarea{min-height:210px;resize:vertical}
+textarea:focus,input:focus,select:focus{border-color:var(--accent);background:#fff}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+button{font:inherit;font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:9px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer}
+button:hover{border-color:#c9d2e0}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.primary:hover{filter:brightness(1.07)}
+label.chk{display:flex;align-items:center;gap:7px;font-size:13.5px;color:var(--muted)}
+.out{margin-top:12px;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;min-height:52px;max-height:340px;overflow:auto}
+.status{font-size:13.5px;margin-top:10px}
+.status.ok{color:var(--ok)}.status.err{color:var(--err)}
+section.explain{margin-top:44px;padding-top:30px;border-top:1px solid var(--border)}
+section.explain h2{font-size:21px;margin:26px 0 10px;letter-spacing:-.2px}
+section.explain h2:first-child{margin-top:0}
+section.explain p,section.explain li{color:#333a45;font-size:15px}
+section.explain ul,section.explain ol{margin:10px 0 10px 22px}
+section.explain li{margin:5px 0}
+details{border-top:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:600;font-size:15px}
+details p{margin-top:8px;color:var(--muted);font-size:14.5px}
+footer.site{border-top:1px solid var(--border);margin-top:52px;padding:26px 0 40px;color:var(--muted);font-size:13.5px}
+footer.site a{color:var(--muted);text-decoration:none;margin-right:14px;display:inline-block}
+footer.site a:hover{color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}
+a.card{display:block;padding:14px 16px;border:1px solid var(--border);border-radius:11px;text-decoration:none;color:inherit;background:#fff}
+a.card:hover{border-color:#c9d2e0}
+a.card b{display:block;font-size:14.5px;margin-bottom:3px}
+a.card span{color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <div class="logo">Tool<span>Mint</span></div>
+  <nav>
+    <a href="/tools/">All tools</a>
+    <a href="/pdfmint/">PDF</a>
+    <a href="/pixmint/">Images</a>
+    <a href="/">Home</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <h1>Unix Timestamp Converter</h1>
+  <p class="lead">Turn a Unix timestamp into a readable date, or a date into a timestamp. Handles seconds and milliseconds.</p>
+
+  <div class="panel">
+    <div class="row" style="margin-top:0">
+      <strong id="now" style="font-size:22px;font-family:ui-monospace,monospace">—</strong>
+      <button id="copyNow">Copy</button>
+      <span id="nowHuman" style="color:#5b6472;font-size:14px"></span>
+    </div>
+    <div class="row">
+      <input type="text" id="ts" placeholder="Paste a timestamp, e.g. 1790000000 or 1790000000000" style="flex:1;min-width:280px"/>
+      <select id="tsUnit" style="width:auto"><option value="auto">Auto-detect</option><option value="s">Seconds</option><option value="ms">Milliseconds</option></select>
+      <button class="primary" id="toDate">→ Date</button>
+    </div>
+    <div class="out" id="out1"></div>
+    <div class="row">
+      <input type="text" id="dt" placeholder="Paste a date, e.g. 2026-09-30T14:05:00Z or September 30, 2026 14:05" style="flex:1;min-width:280px"/>
+      <button class="primary" id="toTs">→ Timestamp</button>
+      <button id="useNow">Use now</button>
+    </div>
+    <div class="out" id="out2"></div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <section class="explain">
+    <h2>What a Unix timestamp is</h2>
+    <p>A Unix timestamp (also called epoch time or POSIX time) is the number of seconds that have elapsed since <strong>00:00:00 UTC on 1 January 1970</strong>, not counting leap seconds. It is a single integer, it has no time zone, and it is the same everywhere on Earth at the same instant — which is exactly why it is used for storing times in databases and APIs.</p>
+    <p>The one thing to watch for is the unit. Most Unix systems use <em>seconds</em>; JavaScript, Java and many APIs use <em>milliseconds</em>. The two are easy to tell apart: a seconds timestamp for a date in this decade has 10 digits, and the same instant in milliseconds has 13.</p>
+
+    <h2>Reading a timestamp by eye</h2>
+    <ul>
+      <li><strong>10 digits</strong> (e.g. <code>1790000000</code>) — seconds, dates between 2001 and 2033.</li>
+      <li><strong>13 digits</strong> (e.g. <code>1790000000000</code>) — milliseconds, the same range.</li>
+      <li><strong>Negative</strong> — a date before 1970. Still valid, still meaningful.</li>
+      <li><strong>16+ digits</strong> — almost certainly nanoseconds or microseconds, from Go or some Python libraries.</li>
+    </ul>
+
+    <h2>Why the same timestamp shows different clock times</h2>
+    <p>A timestamp has no time zone, but a formatted date does. This tool shows you all three views at once — ISO 8601 in UTC, the RFC-style UTC string, and the local time of your own machine — precisely because mixing them up is the most common date bug in software. A value that reads <code>14:05</code> for you may read <code>06:05</code> for a server in another region; the underlying number is identical.</p>
+
+    <h2>The year 2038 problem</h2>
+    <p>Systems that store a Unix timestamp in a signed 32-bit integer run out of room at <code>03:14:07 UTC on 19 January 2038</code>. Values beyond that overflow into negative numbers and wrap around to 1901. Most modern systems use 64-bit integers and are unaffected, but embedded devices, older databases and legacy file formats still are.</p>
+
+    <h2>FAQ</h2>
+    <details open><summary>Is a timestamp in seconds or milliseconds?</summary><p>Count the digits. Ten digits is almost certainly seconds; thirteen is milliseconds. The auto-detect option here uses that rule, and you can override it when a value is ambiguous.</p></details>
+    <details><summary>Why does the timestamp not change when I change time zone?</summary><p>Because it should not. The timestamp is an absolute instant. Only the human-readable rendering depends on the time zone, which is why the local line changes and the number does not.</p></details>
+    <details><summary>What is ISO 8601?</summary><p>An international standard for writing dates and times, for example <code>2026-09-30T14:05:00.000Z</code>. The trailing <code>Z</code> means UTC. It is unambiguous, sorts correctly as plain text, and is the safest format to send between systems.</p></details>
+    <details><summary>Does this work offline?</summary><p>Yes. Conversions use the browser's own <code>Date</code> object, so nothing is sent anywhere.</p></details>
+  </section>
+</main>
+
+<section class="explain wrap" style="border-top:1px solid var(--border)">
+  <h2>Related tools</h2>
+  <div class="cards">
+    <a class="card" href="/color-converter.html"><b>Color Converter — HEX, RGB, HSL and HSV</b><span>Convert HEX, RGB, HSL and HSV with contrast checks.</span></a>
+    <a class="card" href="/hash-generator.html"><b>Hash Generator — SHA-256, SHA-384, SHA-512 and SHA-1</b><span>Generate SHA-256, SHA-384, SHA-512 and SHA-1 hashes.</span></a>
+    <a class="card" href="/password-generator.html"><b>Password Generator</b><span>Generate strong random passwords and passphrases.</span></a>
+  </div>
+</section>
+
+<footer class="site"><div class="wrap">
+  <a href="/tools/">All tools</a><a href="/pdfmint/">PDF tools</a><a href="/pixmint/">Image tools</a><a href="/">Home</a>
+  <p style="margin-top:10px">Everything runs in your browser. Nothing is uploaded.</p>
+</div></footer>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  function say(msg, cls){ var s = $('status'); if(!s) return; s.textContent = msg || ''; s.className = 'status' + (cls ? ' ' + cls : ''); }
+  function copy(text, btn){
+    navigator.clipboard.writeText(text).then(function(){
+      var old = btn.textContent; btn.textContent = '✓ Copied';
+      setTimeout(function(){ btn.textContent = old; }, 1400);
+    }).catch(function(){ say('Copy failed — select the text and copy manually.', 'err'); });
+  }
+  var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'local';
+  function fmt(d){
+    var pad = function(n, w){ n = String(n); while (n.length < (w || 2)) n = '0' + n; return n; };
+    return {
+      iso: d.toISOString(),
+      utc: d.toUTCString(),
+      local: d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds()),
+      rel: relTime(d)
+    };
+  }
+  function relTime(d){
+    var s = Math.round((Date.now() - d.getTime()) / 1000);
+    var past = s >= 0; s = Math.abs(s);
+    var units = [['year',31536000],['month',2592000],['day',86400],['hour',3600],['minute',60],['second',1]];
+    for (var i = 0; i < units.length; i++) {
+      if (s >= units[i][1]) { var n = Math.floor(s / units[i][1]); return n + ' ' + units[i][0] + (n > 1 ? 's' : '') + (past ? ' ago' : ' from now'); }
+    }
+    return 'just now';
+  }
+  function tick(){
+    var d = new Date();
+    $('now').textContent = Math.floor(d.getTime() / 1000);
+    $('nowHuman').textContent = '(' + d.toISOString() + '  ·  ' + tz + ')';
+  }
+  $('copyNow').onclick = function(){ copy($('now').textContent, $('copyNow')); };
+  $('toDate').onclick = function(){
+    var raw = $('ts').value.trim().replace(/[,\s_]/g, '');
+    if (!/^-?\d+$/.test(raw)) { say('✗ Enter digits only — a timestamp is a whole number.', 'err'); $('out1').textContent = ''; return; }
+    var n = Number(raw), unit = $('tsUnit').value;
+    if (unit === 'auto') unit = Math.abs(n) > 1e11 ? 'ms' : 's';
+    var ms = unit === 'ms' ? n : n * 1000;
+    var d = new Date(ms);
+    if (isNaN(d.getTime())) { say('✗ That timestamp is out of range.', 'err'); return; }
+    var f = fmt(d);
+    $('out1').textContent = 'ISO 8601   ' + f.iso + '\nUTC        ' + f.utc + '\nLocal      ' + f.local + '  (' + tz + ')\nRelative   ' + f.rel + '\nDetected   ' + (unit === 'ms' ? 'milliseconds' : 'seconds');
+    say('✓ Converted', 'ok');
+  };
+  $('toTs').onclick = function(){
+    var v = $('dt').value.trim();
+    if (!v) { say('✗ Enter a date first.', 'err'); return; }
+    var d = new Date(v);
+    if (isNaN(d.getTime())) { say('✗ Could not read that date. Try 2026-09-30, 2026-09-30T14:05:00Z or Sep 30 2026 14:05.', 'err'); $('out2').textContent = ''; return; }
+    $('out2').textContent = 'Seconds        ' + Math.floor(d.getTime() / 1000) + '\nMilliseconds   ' + d.getTime() + '\nISO 8601       ' + d.toISOString() + '\nParsed as      ' + d.toString();
+    say('✓ Converted', 'ok');
+  };
+  $('useNow').onclick = function(){ $('dt').value = new Date().toISOString(); };
+  tick(); setInterval(tick, 1000);
+})();
+</script>
+</body>
+</html>
