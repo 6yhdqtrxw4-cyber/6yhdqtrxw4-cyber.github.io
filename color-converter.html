@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Color Converter — HEX to RGB, HSL and HSV with Live Preview</title>
+<meta name="description" content="Convert colours between HEX, RGB, HSL and HSV instantly, with a live preview, contrast check against white and black, and one-click copy."/>
+<meta name="keywords" content="color converter, hex to rgb, rgb to hex, hsl converter, color picker, hex color, contrast checker"/>
+<link rel="canonical" href="https://6yhdqtrxw4-cyber.github.io/color-converter.html"/>
+<meta property="og:title" content="Color Converter — HEX to RGB, HSL and HSV with Live Preview"/>
+<meta property="og:description" content="Convert colours between HEX, RGB, HSL and HSV instantly, with a live preview, contrast check against white and black, and one-click copy."/>
+<meta property="og:type" content="website"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Color Converter — HEX, RGB, HSL and HSV","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert colours between HEX, RGB, HSL and HSV instantly, with a live preview, contrast check against white and black, and one-click copy."}
+</script>
+<style>
+:root{--bg:#ffffff;--soft:#f7f8fa;--panel:#ffffff;--text:#16181d;--muted:#5b6472;--border:#e4e7ec;--accent:#2563eb;--accent-soft:#eff4ff;--ok:#15803d;--err:#b91c1c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.site{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:5}
+header.site .wrap{display:flex;align-items:center;gap:14px;padding:12px 20px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:17px;letter-spacing:-.2px}
+.logo span{color:var(--accent)}
+header.site nav{margin-left:auto;display:flex;gap:14px;font-size:13.5px;flex-wrap:wrap}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover{color:var(--accent)}
+main{padding:34px 0 10px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.5px;margin-bottom:10px}
+.lead{color:var(--muted);font-size:16.5px;margin-bottom:24px;max-width:660px}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px}
+textarea,input[type=text],input[type=number],select{width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;line-height:1.6;color:var(--text);background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;outline:none}
+textarea{min-height:210px;resize:vertical}
+textarea:focus,input:focus,select:focus{border-color:var(--accent);background:#fff}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+button{font:inherit;font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:9px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer}
+button:hover{border-color:#c9d2e0}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.primary:hover{filter:brightness(1.07)}
+label.chk{display:flex;align-items:center;gap:7px;font-size:13.5px;color:var(--muted)}
+.out{margin-top:12px;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;min-height:52px;max-height:340px;overflow:auto}
+.status{font-size:13.5px;margin-top:10px}
+.status.ok{color:var(--ok)}.status.err{color:var(--err)}
+section.explain{margin-top:44px;padding-top:30px;border-top:1px solid var(--border)}
+section.explain h2{font-size:21px;margin:26px 0 10px;letter-spacing:-.2px}
+section.explain h2:first-child{margin-top:0}
+section.explain p,section.explain li{color:#333a45;font-size:15px}
+section.explain ul,section.explain ol{margin:10px 0 10px 22px}
+section.explain li{margin:5px 0}
+details{border-top:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:600;font-size:15px}
+details p{margin-top:8px;color:var(--muted);font-size:14.5px}
+footer.site{border-top:1px solid var(--border);margin-top:52px;padding:26px 0 40px;color:var(--muted);font-size:13.5px}
+footer.site a{color:var(--muted);text-decoration:none;margin-right:14px;display:inline-block}
+footer.site a:hover{color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}
+a.card{display:block;padding:14px 16px;border:1px solid var(--border);border-radius:11px;text-decoration:none;color:inherit;background:#fff}
+a.card:hover{border-color:#c9d2e0}
+a.card b{display:block;font-size:14.5px;margin-bottom:3px}
+a.card span{color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <div class="logo">Tool<span>Mint</span></div>
+  <nav>
+    <a href="/tools/">All tools</a>
+    <a href="/pdfmint/">PDF</a>
+    <a href="/pixmint/">Images</a>
+    <a href="/">Home</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <h1>Color Converter — HEX, RGB, HSL and HSV</h1>
+  <p class="lead">Convert a colour between HEX, RGB, HSL and HSV, preview it, and check whether white or black text stays readable on it.</p>
+
+  <div class="panel">
+    <div class="row" style="margin-top:0">
+      <div id="swatch" style="width:96px;height:96px;border-radius:12px;border:1px solid #e4e7ec"></div>
+      <div style="flex:1;min-width:260px">
+        <input type="text" id="hex" value="#2563eb" placeholder="#2563eb or 2563eb" style="font-size:16px"/>
+        <div class="row" style="margin-top:8px">
+          <input type="range" id="r" min="0" max="255" value="37" style="flex:1"/>
+          <input type="range" id="g" min="0" max="255" value="99" style="flex:1"/>
+          <input type="range" id="b" min="0" max="255" value="235" style="flex:1"/>
+        </div>
+      </div>
+    </div>
+    <div class="out" id="out" style="font-family:ui-monospace,monospace"></div>
+    <div class="out" id="contrast" style="font-family:inherit;min-height:0"></div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <section class="explain">
+    <h2>The four ways to write the same colour</h2>
+    <ul>
+      <li><strong>HEX</strong> — <code>#2563eb</code>. Six hexadecimal digits, two per channel. Found in CSS, design tools and brand guidelines. The shorthand <code>#2af</code> means <code>#22aaff</code>.</li>
+      <li><strong>RGB</strong> — <code>rgb(37, 99, 235)</code>. Each channel runs 0–255. Directly matches how screens store colour.</li>
+      <li><strong>HSL</strong> — <code>hsl(221, 83%, 53%)</code>. Hue in degrees, saturation and lightness in percent. The most useful form for <em>adjusting</em> a colour: to make a lighter tint you raise L, to mute it you drop S.</li>
+      <li><strong>HSV / HSB</strong> — <code>hsv(221, 84%, 92%)</code>. Same hue, but value instead of lightness. This is the model behind most colour pickers, because it maps cleanly onto a square: hue around the edge, saturation across, value down.</li>
+    </ul>
+
+    <h2>Why HSL is worth learning</h2>
+    <p>Editing a palette by HEX is guesswork — changing one character of <code>#2563eb</code> to get a lighter blue gives you a different hue as often as not. In HSL, a tint is "same H and S, higher L", and a shade is "same H and S, lower L". Whole design systems are built this way, and it is why generated palette tools always work in HSL rather than RGB.</p>
+
+    <h2>Contrast, and why it is a legal matter</h2>
+    <p>WCAG sets the standard: normal body text needs a contrast ratio of at least <strong>4.5:1</strong>, large text (18pt, or 14pt bold) at least <strong>3:1</strong>. Government and public-sector sites are obliged to meet it in many countries, and it is the single most common accessibility failure on the web. The ratio is computed from relative luminance, not from how different the colours look — which is why a saturated yellow can be unreadable with white text while a mid grey is fine.</p>
+    <p>The formula used here is the one from the WCAG specification, so the numbers match the official checkers.</p>
+
+    <h2>FAQ</h2>
+    <details open><summary>Why does the same hex look different on two monitors?</summary><p>Uncalibrated displays, different colour gamuts (sRGB vs Display P3) and different brightness settings all shift the appearance. The numeric value is identical; the rendering is not.</p></details>
+    <details><summary>Is there a difference between HSV and HSB?</summary><p>No — they are two names for the same model. Photoshop calls it HSB; most programming libraries call it HSV.</p></details>
+    <details><summary>Does this handle 8-digit hex like #2563ebff?</summary><p>The 8-digit form adds an alpha channel. This converter works on the six-digit form; strip the last two digits, or convert the alpha yourself as a percentage.</p></details>
+  </section>
+</main>
+
+<section class="explain wrap" style="border-top:1px solid var(--border)">
+  <h2>Related tools</h2>
+  <div class="cards">
+    <a class="card" href="/hash-generator.html"><b>Hash Generator — SHA-256, SHA-384, SHA-512 and SHA-1</b><span>Generate SHA-256, SHA-384, SHA-512 and SHA-1 hashes.</span></a>
+    <a class="card" href="/password-generator.html"><b>Password Generator</b><span>Generate strong random passwords and passphrases.</span></a>
+    <a class="card" href="/timestamp-converter.html"><b>Unix Timestamp Converter</b><span>Convert epoch timestamps to dates and back.</span></a>
+  </div>
+</section>
+
+<footer class="site"><div class="wrap">
+  <a href="/tools/">All tools</a><a href="/pdfmint/">PDF tools</a><a href="/pixmint/">Image tools</a><a href="/">Home</a>
+  <p style="margin-top:10px">Everything runs in your browser. Nothing is uploaded.</p>
+</div></footer>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  function say(msg, cls){ var s = $('status'); if(!s) return; s.textContent = msg || ''; s.className = 'status' + (cls ? ' ' + cls : ''); }
+  function copy(text, btn){
+    navigator.clipboard.writeText(text).then(function(){
+      var old = btn.textContent; btn.textContent = '✓ Copied';
+      setTimeout(function(){ btn.textContent = old; }, 1400);
+    }).catch(function(){ say('Copy failed — select the text and copy manually.', 'err'); });
+  }
+  function clamp(n, lo, hi){ return Math.min(hi, Math.max(lo, n)); }
+  function hex2rgb(h){
+    h = h.trim().replace(/^#/, '');
+    if (/^[0-9a-f]{3}$/i.test(h)) h = h.split('').map(function(c){ return c + c; }).join('');
+    if (!/^[0-9a-f]{6}$/i.test(h)) return null;
+    return { r: parseInt(h.slice(0,2),16), g: parseInt(h.slice(2,4),16), b: parseInt(h.slice(4,6),16) };
+  }
+  function rgb2hex(c){
+    var p = function(n){ n = clamp(Math.round(n),0,255).toString(16); return n.length === 1 ? '0' + n : n; };
+    return '#' + p(c.r) + p(c.g) + p(c.b);
+  }
+  function rgb2hsl(c){
+    var r = c.r/255, g = c.g/255, b = c.b/255;
+    var max = Math.max(r,g,b), min = Math.min(r,g,b), h = 0, s = 0, l = (max+min)/2;
+    var d = max - min;
+    if (d) {
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+      if (max === r) h = ((g-b)/d + (g < b ? 6 : 0));
+      else if (max === g) h = (b-r)/d + 2;
+      else h = (r-g)/d + 4;
+      h *= 60;
+    }
+    return { h: Math.round(h), s: Math.round(s*100), l: Math.round(l*100) };
+  }
+  function rgb2hsv(c){
+    var r = c.r/255, g = c.g/255, b = c.b/255;
+    var max = Math.max(r,g,b), min = Math.min(r,g,b), d = max - min, h = 0;
+    if (d) {
+      if (max === r) h = ((g-b)/d + (g < b ? 6 : 0));
+      else if (max === g) h = (b-r)/d + 2;
+      else h = (r-g)/d + 4;
+      h *= 60;
+    }
+    return { h: Math.round(h), s: Math.round((max ? d/max : 0)*100), v: Math.round(max*100) };
+  }
+  function lum(c){
+    var f = function(v){ v /= 255; return v <= 0.03928 ? v/12.92 : Math.pow((v+0.055)/1.055, 2.4); };
+    return 0.2126*f(c.r) + 0.7152*f(c.g) + 0.0722*f(c.b);
+  }
+  function ratio(a, b){ var L1 = lum(a), L2 = lum(b); if (L1 < L2) { var t = L1; L1 = L2; L2 = t; } return (L1 + 0.05) / (L2 + 0.05); }
+  var WHITE = { r:255, g:255, b:255 }, BLACK = { r:0, g:0, b:0 };
+
+  function render(c){
+    $('swatch').style.background = rgb2hex(c);
+    $('r').value = c.r; $('g').value = c.g; $('b').value = c.b;
+    var hsl = rgb2hsl(c), hsv = rgb2hsv(c);
+    $('out').textContent =
+      'HEX   ' + rgb2hex(c).toUpperCase() + '\n' +
+      'RGB   rgb(' + c.r + ', ' + c.g + ', ' + c.b + ')\n' +
+      'HSL   hsl(' + hsl.h + ', ' + hsl.s + '%, ' + hsl.l + '%)\n' +
+      'HSV   hsv(' + hsv.h + ', ' + hsv.s + '%, ' + hsv.v + '%)';
+    var rw = ratio(c, WHITE), rb = ratio(c, BLACK);
+    var verdict = function(x){ return x >= 4.5 ? '✅ AA 正文可用' : x >= 3 ? '⚠️ 仅大字号 (AA Large)' : '❌ 不可用'; };
+    $('contrast').innerHTML =
+      '<strong>对比度检查</strong><br>' +
+      '白色文字在本色上：<strong>' + rw.toFixed(2) + ':1</strong> — ' + verdict(rw) + '<br>' +
+      '黑色文字在本色上：<strong>' + rb.toFixed(2) + ':1</strong> — ' + verdict(rb) + '<br>' +
+      '<span style="color:#5b6472">WCAG 要求正文 ≥ 4.5:1，大字 ≥ 3:1。</span>';
+    return rgb2hex(c);
+  }
+  function fromHex(){
+    var c = hex2rgb($('hex').value);
+    if (!c) { say('✗ Enter a valid hex colour, like #2563eb or #2af.', 'err'); return; }
+    $('hex').value = rgb2hex(c).toUpperCase();
+    render(c);
+    say('✓ ' + rgb2hex(c).toUpperCase(), 'ok');
+  }
+  $('hex').addEventListener('input', fromHex);
+  ['r','g','b'].forEach(function(k){
+    $(k).addEventListener('input', function(){
+      var c = { r: +$('r').value, g: +$('g').value, b: +$('b').value };
+      $('hex').value = rgb2hex(c).toUpperCase();
+      render(c);
+      say('✓ ' + rgb2hex(c).toUpperCase(), 'ok');
+    });
+  });
+  fromHex();
+})();
+</script>
+</body>
+</html>
