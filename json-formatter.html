@@ -160,7 +160,7 @@ a.card span{color:var(--muted);font-size:13px}
   }
   function run(minify){
     var raw = input.value.trim();
-    if (!raw) { say('Paste some JSON first.', 'err'); out.textContent = ''; return; }
+    if (!raw) { say('✗ Paste some JSON first.', 'err'); out.textContent = ''; return; }
     try {
       var v = JSON.parse(raw);
       if (!minify && $('sort').checked) v = sortKeys(v);
