@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Base64 Encoder &amp; Decoder — Encode and Decode Text Online, Free</title>
+<meta name="description" content="Encode text to Base64 or decode Base64 back to text in your browser. Handles UTF-8 correctly, including emoji and non-Latin scripts. Nothing is uploaded."/>
+<meta name="keywords" content="base64 encode, base64 decode, base64 converter, base64 to text, text to base64"/>
+<link rel="canonical" href="https://6yhdqtrxw4-cyber.github.io/base64-encoder-decoder.html"/>
+<meta property="og:title" content="Base64 Encoder &amp; Decoder — Encode and Decode Text Online, Free"/>
+<meta property="og:description" content="Encode text to Base64 or decode Base64 back to text in your browser. Handles UTF-8 correctly, including emoji and non-Latin scripts. Nothing is uploaded."/>
+<meta property="og:type" content="website"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Base64 Encoder & Decoder","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Encode text to Base64 or decode Base64 back to text in your browser. Handles UTF-8 correctly, including emoji and non-Latin scripts. Nothing is uploaded."}
+</script>
+<style>
+:root{--bg:#ffffff;--soft:#f7f8fa;--panel:#ffffff;--text:#16181d;--muted:#5b6472;--border:#e4e7ec;--accent:#2563eb;--accent-soft:#eff4ff;--ok:#15803d;--err:#b91c1c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.site{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:5}
+header.site .wrap{display:flex;align-items:center;gap:14px;padding:12px 20px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:17px;letter-spacing:-.2px}
+.logo span{color:var(--accent)}
+header.site nav{margin-left:auto;display:flex;gap:14px;font-size:13.5px;flex-wrap:wrap}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover{color:var(--accent)}
+main{padding:34px 0 10px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.5px;margin-bottom:10px}
+.lead{color:var(--muted);font-size:16.5px;margin-bottom:24px;max-width:660px}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px}
+textarea,input[type=text],input[type=number],select{width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;line-height:1.6;color:var(--text);background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;outline:none}
+textarea{min-height:210px;resize:vertical}
+textarea:focus,input:focus,select:focus{border-color:var(--accent);background:#fff}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+button{font:inherit;font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:9px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer}
+button:hover{border-color:#c9d2e0}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.primary:hover{filter:brightness(1.07)}
+label.chk{display:flex;align-items:center;gap:7px;font-size:13.5px;color:var(--muted)}
+.out{margin-top:12px;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;min-height:52px;max-height:340px;overflow:auto}
+.status{font-size:13.5px;margin-top:10px}
+.status.ok{color:var(--ok)}.status.err{color:var(--err)}
+section.explain{margin-top:44px;padding-top:30px;border-top:1px solid var(--border)}
+section.explain h2{font-size:21px;margin:26px 0 10px;letter-spacing:-.2px}
+section.explain h2:first-child{margin-top:0}
+section.explain p,section.explain li{color:#333a45;font-size:15px}
+section.explain ul,section.explain ol{margin:10px 0 10px 22px}
+section.explain li{margin:5px 0}
+details{border-top:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:600;font-size:15px}
+details p{margin-top:8px;color:var(--muted);font-size:14.5px}
+footer.site{border-top:1px solid var(--border);margin-top:52px;padding:26px 0 40px;color:var(--muted);font-size:13.5px}
+footer.site a{color:var(--muted);text-decoration:none;margin-right:14px;display:inline-block}
+footer.site a:hover{color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}
+a.card{display:block;padding:14px 16px;border:1px solid var(--border);border-radius:11px;text-decoration:none;color:inherit;background:#fff}
+a.card:hover{border-color:#c9d2e0}
+a.card b{display:block;font-size:14.5px;margin-bottom:3px}
+a.card span{color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <div class="logo">Tool<span>Mint</span></div>
+  <nav>
+    <a href="/tools/">All tools</a>
+    <a href="/pdfmint/">PDF</a>
+    <a href="/pixmint/">Images</a>
+    <a href="/">Home</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <h1>Base64 Encoder &amp; Decoder</h1>
+  <p class="lead">Convert text to Base64 and back. UTF-8 safe, so emoji and non-Latin characters survive the round trip.</p>
+
+  <div class="panel">
+    <textarea id="in" placeholder="Type or paste text, or paste Base64 to decode…"></textarea>
+    <div class="row">
+      <button class="primary" id="enc">Encode → Base64</button>
+      <button class="primary" id="dec">Decode → Text</button>
+      <button id="copy">Copy result</button>
+      <label class="chk"><input type="checkbox" id="urlsafe"/> URL-safe (-_ instead of +/)</label>
+      <label class="chk"><input type="checkbox" id="wrap"/> Wrap at 76 chars</label>
+    </div>
+    <div class="out" id="out"></div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <section class="explain">
+    <h2>What Base64 actually is</h2>
+    <p>Base64 is a way of representing arbitrary binary data using only 64 printable characters: <code>A–Z</code>, <code>a–z</code>, <code>0–9</code>, <code>+</code> and <code>/</code>. Every 3 bytes of input become 4 characters of output, so the encoded form is about 33% larger. It is not encryption and it is not compression — it is a transport encoding, used where only text can travel.</p>
+
+    <h2>Why the standard version breaks non-English text</h2>
+    <p>The classic JavaScript approach — <code>btoa(text)</code> — only accepts characters in the Latin-1 range. Feed it Chinese, Arabic, Cyrillic or an emoji and it throws <em>InvalidCharacterError</em>, or silently produces the wrong bytes. This tool encodes to UTF-8 first and only then applies Base64, and reverses that order when decoding, so any character round-trips correctly.</p>
+
+    <h2>When you need it</h2>
+    <ul>
+      <li><strong>Embedding data in HTML or CSS</strong> — small images and fonts are often inlined as <code>data:</code> URIs.</li>
+      <li><strong>HTTP Basic authentication</strong> — the header is the username and password joined with a colon and Base64-encoded.</li>
+      <li><strong>JWT inspection</strong> — a JSON Web Token's first two segments are Base64URL-encoded JSON. Decoding them is how you read the payload.</li>
+      <li><strong>Passing binary through a text channel</strong> — email attachments, XML payloads, configuration values.</li>
+      <li><strong>API keys and secrets in transit</strong> — although note that Base64 offers no protection at all.</li>
+    </ul>
+
+    <h2>Base64 vs Base64URL</h2>
+    <p>Standard Base64 uses <code>+</code> and <code>/</code>, both of which have meaning inside a URL. Base64URL substitutes <code>-</code> and <code>_</code> so the result can be placed in a query string or a filename. JWTs use Base64URL, which is why the strings you paste from a token sometimes contain dashes and underscores. This tool accepts either form when decoding, and the checkbox controls which form it produces.</p>
+
+    <h2>FAQ</h2>
+    <details open><summary>Is Base64 a form of encryption?</summary><p>No. Anyone can decode Base64 in a fraction of a second, with no key. Never use it to protect a password or a secret.</p></details>
+    <details><summary>Why is the encoded text longer than the original?</summary><p>Each group of 3 bytes becomes 4 characters, so the output is roughly 133% of the input size. That overhead is the price of restricting the output to printable characters.</p></details>
+    <details><summary>Why does my decoded text look like garbled characters?</summary><p>The bytes are probably not UTF-8 — they may be an image, a compressed blob or text in a different legacy encoding. Decoding binary as text always produces something, but it is rarely meaningful.</p></details>
+    <details><summary>Is anything sent to a server?</summary><p>No. Encoding and decoding use the browser's built-in <code>btoa</code>, <code>atob</code>, <code>TextEncoder</code> and <code>TextDecoder</code>. Nothing leaves the page.</p></details>
+  </section>
+</main>
+
+<section class="explain wrap" style="border-top:1px solid var(--border)">
+  <h2>Related tools</h2>
+  <div class="cards">
+    <a class="card" href="/case-converter.html"><b>Case Converter</b><span>Convert between eight naming and letter cases.</span></a>
+    <a class="card" href="/json-formatter.html"><b>JSON Formatter &amp; Validator</b><span>Pretty-print, minify and validate JSON with precise error positions.</span></a>
+    <a class="card" href="/url-encoder-decoder.html"><b>URL Encoder &amp; Decoder</b><span>Percent-encode and decode URLs and query strings.</span></a>
+    <a class="card" href="/word-counter.html"><b>Word &amp; Character Counter</b><span>Live word, character and reading-time counts.</span></a>
+  </div>
+</section>
+
+<footer class="site"><div class="wrap">
+  <a href="/tools/">All tools</a><a href="/pdfmint/">PDF tools</a><a href="/pixmint/">Image tools</a><a href="/">Home</a>
+  <p style="margin-top:10px">Everything runs in your browser. Nothing is uploaded.</p>
+</div></footer>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  function say(msg, cls){ var s = $('status'); if(!s) return; s.textContent = msg || ''; s.className = 'status' + (cls ? ' ' + cls : ''); }
+  function copy(text, btn){
+    navigator.clipboard.writeText(text).then(function(){
+      var old = btn.textContent; btn.textContent = '✓ Copied';
+      setTimeout(function(){ btn.textContent = old; }, 1400);
+    }).catch(function(){ say('Copy failed — select the text and copy manually.', 'err'); });
+  }
+  var input = $('in'), out = $('out');
+  function toB64(str, urlsafe){
+    var bytes = new TextEncoder().encode(str);
+    var bin = '';
+    for (var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+    var b = btoa(bin);
+    if (urlsafe) b = b.replace(/\+/g, '-').replace(/\//g, '_');
+    return b;
+  }
+  function fromB64(str){
+    var b = str.trim().replace(/\s+/g, '').replace(/-/g, '+').replace(/_/g, '/');
+    while (b.length % 4) b += '=';
+    var bin = atob(b);
+    var bytes = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return new TextDecoder('utf-8', { fatal: false }).decode(bytes);
+  }
+  function wrap76(s){ return s.replace(/(.{76})/g, '$1\n'); }
+  $('enc').onclick = function(){
+    var v = input.value;
+    if (!v) { say('Type something to encode.', 'err'); out.textContent = ''; return; }
+    var r = toB64(v, $('urlsafe').checked);
+    if ($('wrap').checked) r = wrap76(r);
+    out.textContent = r;
+    say('✓ Encoded ' + new TextEncoder().encode(v).length + ' bytes → ' + r.replace(/\s/g,'').length + ' Base64 chars', 'ok');
+  };
+  $('dec').onclick = function(){
+    var v = input.value;
+    if (!v.trim()) { say('Paste Base64 to decode.', 'err'); out.textContent = ''; return; }
+    try {
+      var r = fromB64(v);
+      out.textContent = r;
+      say('✓ Decoded to ' + r.length + ' characters', 'ok');
+    } catch (e) {
+      out.textContent = '';
+      say('✗ That does not look like valid Base64. Check for missing characters or stray spaces.', 'err');
+    }
+  };
+  $('copy').onclick = function(){ if (out.textContent) copy(out.textContent, $('copy')); };
+})();
+</script>
+</body>
+</html>
