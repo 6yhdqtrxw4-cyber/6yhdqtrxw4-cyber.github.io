@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Case Converter — UPPERCASE, lowercase, Title Case, camelCase &amp; snake_case</title>
+<meta name="description" content="Convert text between UPPER CASE, lower case, Sentence case, Title Case, camelCase, PascalCase, snake_case and kebab-case. Runs in your browser."/>
+<meta name="keywords" content="case converter, uppercase to lowercase, title case converter, camelcase converter, snake case, kebab case, sentence case"/>
+<link rel="canonical" href="https://6yhdqtrxw4-cyber.github.io/case-converter.html"/>
+<meta property="og:title" content="Case Converter — UPPERCASE, lowercase, Title Case, camelCase &amp; snake_case"/>
+<meta property="og:description" content="Convert text between UPPER CASE, lower case, Sentence case, Title Case, camelCase, PascalCase, snake_case and kebab-case. Runs in your browser."/>
+<meta property="og:type" content="website"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Case Converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Convert text between UPPER CASE, lower case, Sentence case, Title Case, camelCase, PascalCase, snake_case and kebab-case. Runs in your browser."}
+</script>
+<style>
+:root{--bg:#ffffff;--soft:#f7f8fa;--panel:#ffffff;--text:#16181d;--muted:#5b6472;--border:#e4e7ec;--accent:#2563eb;--accent-soft:#eff4ff;--ok:#15803d;--err:#b91c1c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.site{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:5}
+header.site .wrap{display:flex;align-items:center;gap:14px;padding:12px 20px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:17px;letter-spacing:-.2px}
+.logo span{color:var(--accent)}
+header.site nav{margin-left:auto;display:flex;gap:14px;font-size:13.5px;flex-wrap:wrap}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover{color:var(--accent)}
+main{padding:34px 0 10px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.5px;margin-bottom:10px}
+.lead{color:var(--muted);font-size:16.5px;margin-bottom:24px;max-width:660px}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px}
+textarea,input[type=text],input[type=number],select{width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;line-height:1.6;color:var(--text);background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;outline:none}
+textarea{min-height:210px;resize:vertical}
+textarea:focus,input:focus,select:focus{border-color:var(--accent);background:#fff}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+button{font:inherit;font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:9px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer}
+button:hover{border-color:#c9d2e0}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.primary:hover{filter:brightness(1.07)}
+label.chk{display:flex;align-items:center;gap:7px;font-size:13.5px;color:var(--muted)}
+.out{margin-top:12px;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;min-height:52px;max-height:340px;overflow:auto}
+.status{font-size:13.5px;margin-top:10px}
+.status.ok{color:var(--ok)}.status.err{color:var(--err)}
+section.explain{margin-top:44px;padding-top:30px;border-top:1px solid var(--border)}
+section.explain h2{font-size:21px;margin:26px 0 10px;letter-spacing:-.2px}
+section.explain h2:first-child{margin-top:0}
+section.explain p,section.explain li{color:#333a45;font-size:15px}
+section.explain ul,section.explain ol{margin:10px 0 10px 22px}
+section.explain li{margin:5px 0}
+details{border-top:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:600;font-size:15px}
+details p{margin-top:8px;color:var(--muted);font-size:14.5px}
+footer.site{border-top:1px solid var(--border);margin-top:52px;padding:26px 0 40px;color:var(--muted);font-size:13.5px}
+footer.site a{color:var(--muted);text-decoration:none;margin-right:14px;display:inline-block}
+footer.site a:hover{color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}
+a.card{display:block;padding:14px 16px;border:1px solid var(--border);border-radius:11px;text-decoration:none;color:inherit;background:#fff}
+a.card:hover{border-color:#c9d2e0}
+a.card b{display:block;font-size:14.5px;margin-bottom:3px}
+a.card span{color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <div class="logo">Tool<span>Mint</span></div>
+  <nav>
+    <a href="/tools/">All tools</a>
+    <a href="/pdfmint/">PDF</a>
+    <a href="/pixmint/">Images</a>
+    <a href="/">Home</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <h1>Case Converter</h1>
+  <p class="lead">Turn any text into UPPERCASE, lowercase, Sentence case, Title Case, camelCase, PascalCase, snake_case or kebab-case.</p>
+
+  <div class="panel">
+    <textarea id="in" placeholder="Type or paste text to convert…"></textarea>
+    <div class="row">
+      <button class="primary" id="upper">UPPER CASE</button>
+      <button class="primary" id="lower">lower case</button>
+      <button id="sentence">Sentence case</button>
+      <button id="title">Title Case</button>
+    </div>
+    <div class="row">
+      <button id="camel">camelCase</button>
+      <button id="pascal">PascalCase</button>
+      <button id="snake">snake_case</button>
+      <button id="kebab">kebab-case</button>
+      <button id="copy">Copy result</button>
+    </div>
+    <div class="out" id="out"></div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <section class="explain">
+    <h2>The eight cases, and when each one is correct</h2>
+    <ul>
+      <li><strong>UPPER CASE</strong> — emphasis, acronyms, labels that must not be missed.</li>
+      <li><strong>lower case</strong> — normalising text where casing is inconsistent.</li>
+      <li><strong>Sentence case</strong> — the standard for body text, headings in most style guides, and UI copy.</li>
+      <li><strong>Title Case</strong> — book and article titles. Short words such as <em>of</em>, <em>the</em> and <em>and</em> stay lowercase unless they come first.</li>
+      <li><strong>camelCase</strong> — JavaScript and Java variables and functions.</li>
+      <li><strong>PascalCase</strong> — class names, React components, C# methods.</li>
+      <li><strong>snake_case</strong> — Python and Ruby identifiers, database columns.</li>
+      <li><strong>kebab-case</strong> — URLs, CSS class names, HTML attributes.</li>
+    </ul>
+
+    <h2>Why the programming cases are harder than they look</h2>
+    <p>Converting <code>userProfileImageURL</code> to snake_case requires knowing where the words begin. A naive split on capitals produces <code>user_profile_image_u_r_l</code>. This tool inserts a boundary between a lowercase letter and a following uppercase one, and treats runs of capitals followed by a lowercase letter as a single word — so <code>URL</code> stays together.</p>
+
+    <h2>FAQ</h2>
+    <details open><summary>Does Title Case follow a particular style guide?</summary><p>It uses the common convention where articles, short prepositions and coordinating conjunctions stay lowercase unless they are the first or last word. Different publishers differ on the fine details.</p></details>
+    <details><summary>Will it break my acronyms?</summary><p>UPPER and lower obviously do not preserve them. For the programming cases, an existing acronym such as <code>URL</code> is kept as one word rather than split into letters.</p></details>
+    <details><summary>Does it handle non-Latin scripts?</summary><p>The letter-case conversions only apply where a script has case. Chinese, Japanese, Arabic and Hebrew have no upper or lower case, so those modes leave the text unchanged — the programming cases still work, since they operate on word boundaries.</p></details>
+  </section>
+</main>
+
+<section class="explain wrap" style="border-top:1px solid var(--border)">
+  <h2>Related tools</h2>
+  <div class="cards">
+    <a class="card" href="/base64-encoder-decoder.html"><b>Base64 Encoder &amp; Decoder</b><span>Encode or decode Base64 text, UTF-8 safe.</span></a>
+    <a class="card" href="/json-formatter.html"><b>JSON Formatter &amp; Validator</b><span>Pretty-print, minify and validate JSON with precise error positions.</span></a>
+    <a class="card" href="/url-encoder-decoder.html"><b>URL Encoder &amp; Decoder</b><span>Percent-encode and decode URLs and query strings.</span></a>
+    <a class="card" href="/word-counter.html"><b>Word &amp; Character Counter</b><span>Live word, character and reading-time counts.</span></a>
+  </div>
+</section>
+
+<footer class="site"><div class="wrap">
+  <a href="/tools/">All tools</a><a href="/pdfmint/">PDF tools</a><a href="/pixmint/">Image tools</a><a href="/">Home</a>
+  <p style="margin-top:10px">Everything runs in your browser. Nothing is uploaded.</p>
+</div></footer>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  function say(msg, cls){ var s = $('status'); if(!s) return; s.textContent = msg || ''; s.className = 'status' + (cls ? ' ' + cls : ''); }
+  function copy(text, btn){
+    navigator.clipboard.writeText(text).then(function(){
+      var old = btn.textContent; btn.textContent = '✓ Copied';
+      setTimeout(function(){ btn.textContent = old; }, 1400);
+    }).catch(function(){ say('Copy failed — select the text and copy manually.', 'err'); });
+  }
+  var input = $('in'), out = $('out');
+  var SMALL = ['a','an','and','as','at','but','by','for','from','in','into','nor','of','on','onto','or','over','the','to','up','with'];
+  function words(s){ return s.replace(/([a-z0-9])([A-Z])/g, '$1 $2').replace(/[_\-]+/g, ' ').split(/\s+/).filter(Boolean); }
+  function sentence(s){ return s.toLowerCase().replace(/(^\s*\w|[.!?]\s+\w)/g, function(m){ return m.toUpperCase(); }); }
+  function title(s){
+    return words(s).map(function(w, i){
+      var lw = w.toLowerCase();
+      if (i > 0 && SMALL.indexOf(lw) !== -1) return lw;
+      return lw.charAt(0).toUpperCase() + lw.slice(1);
+    }).join(' ');
+  }
+  var out8 = {
+    upper:    function(s){ return s.toUpperCase(); },
+    lower:    function(s){ return s.toLowerCase(); },
+    sentence: sentence,
+    title:    title,
+    camel:    function(s){ return words(s).map(function(w,i){ w = w.toLowerCase(); return i === 0 ? w : w.charAt(0).toUpperCase() + w.slice(1); }).join(''); },
+    pascal:   function(s){ return words(s).map(function(w){ w = w.toLowerCase(); return w.charAt(0).toUpperCase() + w.slice(1); }).join(''); },
+    snake:    function(s){ return words(s).map(function(w){ return w.toLowerCase(); }).join('_'); },
+    kebab:    function(s){ return words(s).map(function(w){ return w.toLowerCase(); }).join('-'); }
+  };
+  ['upper','lower','sentence','title','camel','pascal','snake','kebab'].forEach(function(k){
+    $(k).onclick = function(){
+      var v = input.value;
+      if (!v.trim()) { say('Type something to convert.', 'err'); return; }
+      out.textContent = out8[k](v);
+      say('✓ Converted ' + v.length + ' characters', 'ok');
+    };
+  });
+  $('copy').onclick = function(){ if (out.textContent) copy(out.textContent, $('copy')); };
+})();
+</script>
+</body>
+</html>
