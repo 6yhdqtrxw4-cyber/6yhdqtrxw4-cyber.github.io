@@ -192,12 +192,12 @@ a.card span{color:var(--muted);font-size:13px}
       'HSL   hsl(' + hsl.h + ', ' + hsl.s + '%, ' + hsl.l + '%)\n' +
       'HSV   hsv(' + hsv.h + ', ' + hsv.s + '%, ' + hsv.v + '%)';
     var rw = ratio(c, WHITE), rb = ratio(c, BLACK);
-    var verdict = function(x){ return x >= 4.5 ? '✅ AA 正文可用' : x >= 3 ? '⚠️ 仅大字号 (AA Large)' : '❌ 不可用'; };
+    var verdict = function(x){ return x >= 4.5 ? '✅ AA for body text' : x >= 3 ? '⚠️ Large text only (AA Large)' : '❌ Fails WCAG'; };
     $('contrast').innerHTML =
-      '<strong>对比度检查</strong><br>' +
-      '白色文字在本色上：<strong>' + rw.toFixed(2) + ':1</strong> — ' + verdict(rw) + '<br>' +
-      '黑色文字在本色上：<strong>' + rb.toFixed(2) + ':1</strong> — ' + verdict(rb) + '<br>' +
-      '<span style="color:#5b6472">WCAG 要求正文 ≥ 4.5:1，大字 ≥ 3:1。</span>';
+      '<strong>Contrast check</strong><br>' +
+      'White text on this colour: <strong>' + rw.toFixed(2) + ':1</strong> — ' + verdict(rw) + '<br>' +
+      'Black text on this colour: <strong>' + rb.toFixed(2) + ':1</strong> — ' + verdict(rb) + '<br>' +
+      '<span style="color:#5b6472">WCAG requires 4.5:1 for body text and 3:1 for large text.</span>';
     return rgb2hex(c);
   }
   function fromHex(){
