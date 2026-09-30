@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>URL Encoder / Decoder — Percent-Encoding for Query Strings and Paths</title>
+<meta name="description" content="Percent-encode or decode URLs, query string values and path segments. Shows exactly which characters get encoded and why. Runs entirely in your browser."/>
+<meta name="keywords" content="url encoder, url decoder, percent encoding, urlencode, uri encode, query string encoder"/>
+<link rel="canonical" href="https://6yhdqtrxw4-cyber.github.io/url-encoder-decoder.html"/>
+<meta property="og:title" content="URL Encoder / Decoder — Percent-Encoding for Query Strings and Paths"/>
+<meta property="og:description" content="Percent-encode or decode URLs, query string values and path segments. Shows exactly which characters get encoded and why. Runs entirely in your browser."/>
+<meta property="og:type" content="website"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"URL Encoder & Decoder","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Percent-encode or decode URLs, query string values and path segments. Shows exactly which characters get encoded and why. Runs entirely in your browser."}
+</script>
+<style>
+:root{--bg:#ffffff;--soft:#f7f8fa;--panel:#ffffff;--text:#16181d;--muted:#5b6472;--border:#e4e7ec;--accent:#2563eb;--accent-soft:#eff4ff;--ok:#15803d;--err:#b91c1c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.site{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:5}
+header.site .wrap{display:flex;align-items:center;gap:14px;padding:12px 20px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:17px;letter-spacing:-.2px}
+.logo span{color:var(--accent)}
+header.site nav{margin-left:auto;display:flex;gap:14px;font-size:13.5px;flex-wrap:wrap}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover{color:var(--accent)}
+main{padding:34px 0 10px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.5px;margin-bottom:10px}
+.lead{color:var(--muted);font-size:16.5px;margin-bottom:24px;max-width:660px}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px}
+textarea,input[type=text],input[type=number],select{width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;line-height:1.6;color:var(--text);background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;outline:none}
+textarea{min-height:210px;resize:vertical}
+textarea:focus,input:focus,select:focus{border-color:var(--accent);background:#fff}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+button{font:inherit;font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:9px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer}
+button:hover{border-color:#c9d2e0}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.primary:hover{filter:brightness(1.07)}
+label.chk{display:flex;align-items:center;gap:7px;font-size:13.5px;color:var(--muted)}
+.out{margin-top:12px;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;min-height:52px;max-height:340px;overflow:auto}
+.status{font-size:13.5px;margin-top:10px}
+.status.ok{color:var(--ok)}.status.err{color:var(--err)}
+section.explain{margin-top:44px;padding-top:30px;border-top:1px solid var(--border)}
+section.explain h2{font-size:21px;margin:26px 0 10px;letter-spacing:-.2px}
+section.explain h2:first-child{margin-top:0}
+section.explain p,section.explain li{color:#333a45;font-size:15px}
+section.explain ul,section.explain ol{margin:10px 0 10px 22px}
+section.explain li{margin:5px 0}
+details{border-top:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:600;font-size:15px}
+details p{margin-top:8px;color:var(--muted);font-size:14.5px}
+footer.site{border-top:1px solid var(--border);margin-top:52px;padding:26px 0 40px;color:var(--muted);font-size:13.5px}
+footer.site a{color:var(--muted);text-decoration:none;margin-right:14px;display:inline-block}
+footer.site a:hover{color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}
+a.card{display:block;padding:14px 16px;border:1px solid var(--border);border-radius:11px;text-decoration:none;color:inherit;background:#fff}
+a.card:hover{border-color:#c9d2e0}
+a.card b{display:block;font-size:14.5px;margin-bottom:3px}
+a.card span{color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <div class="logo">Tool<span>Mint</span></div>
+  <nav>
+    <a href="/tools/">All tools</a>
+    <a href="/pdfmint/">PDF</a>
+    <a href="/pixmint/">Images</a>
+    <a href="/">Home</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <h1>URL Encoder &amp; Decoder</h1>
+  <p class="lead">Percent-encode text for use in a URL, or decode a URL back to readable text. Choose the right mode for paths, query values or full URLs.</p>
+
+  <div class="panel">
+    <textarea id="in" placeholder="Paste a URL, or text you want to put into one…"></textarea>
+    <div class="row">
+      <button class="primary" id="enc">Encode</button>
+      <button class="primary" id="dec">Decode</button>
+      <button id="copy">Copy result</button>
+      <select id="mode" style="width:auto">
+        <option value="component">Query value / component — encodes &amp; = ? / #</option>
+        <option value="full">Full URL — keeps : / ? &amp; = # intact</option>
+        <option value="plus">Form style — spaces become +</option>
+      </select>
+    </div>
+    <div class="out" id="out"></div>
+    <div class="out" id="parts" style="font-family:inherit;font-size:13.5px;min-height:0;max-height:none"></div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <section class="explain">
+    <h2>The two modes are not interchangeable</h2>
+    <p>This is the mistake behind most broken links. <code>encodeURIComponent</code> escapes every character that has a reserved meaning in a URL, including <code>/ ? : @ &amp; = + #</code>. That is exactly right when you are encoding <em>a value</em> that will sit inside a query string. It is wrong when you are encoding <em>a whole URL</em>, because it destroys the separators that give the URL its structure.</p>
+    <p>So: encoding the search term <code>shoes &amp; socks</code> should produce <code>shoes%20%26%20socks</code>. Encoding the URL <code>https://example.com/a?b=1</code> should leave the <code>://</code>, the <code>/</code> and the <code>?</code> exactly as they are.</p>
+
+    <h2>Which characters are reserved, and why</h2>
+    <ul>
+      <li><code>/ ? #</code> — structure: path, query, fragment.</li>
+      <li><code>&amp; =</code> — separate and assign query parameters.</li>
+      <li><code>+</code> — the legacy form-encoding shorthand for a space.</li>
+      <li><code>%</code> — the escape character itself, which is why a literal percent sign must be written as <code>%25</code>.</li>
+      <li><code>space</code> — must be <code>%20</code> in a URL. Browsers often display it back as a space, which hides the problem until the link is copied somewhere else.</li>
+      <li><code>" &lt; &gt; ` { } | \ ^ [ ]</code> — unsafe or excluded, always encoded.</li>
+    </ul>
+
+    <h2>What double-encoding looks like</h2>
+    <p>Encode an already-encoded string and the percent signs get encoded too: <code>%20</code> becomes <code>%2520</code>, and a space reappears as the literal text "%20". If a decoded URL shows percent sequences that were not in your original text, it has been encoded twice somewhere along the way. The Decode button here reverses one layer at a time — press it again to strip a second layer.</p>
+
+    <h2>FAQ</h2>
+    <details open><summary>Why do some links use + for spaces and others %20?</summary><p><code>+</code> comes from HTML form encoding (<code>application/x-www-form-urlencoded</code>) and is still what many servers expect in a query string. <code>%20</code> is the general-purpose standard and the only correct choice in a path. The Form style option produces the <code>+</code> variant.</p></details>
+    <details><summary>Can this encode a non-Latin URL?</summary><p>Yes. The text is converted to UTF-8 bytes and each byte is percent-encoded, which is the correct behaviour for internationalised URLs. <code>https://例え.jp/ページ</code> becomes a fully escaped ASCII string.</p></details>
+    <details><summary>Is the URL sent anywhere?</summary><p>No. Encoding, decoding and the URL breakdown all use built-in browser APIs on this page.</p></details>
+  </section>
+</main>
+
+<section class="explain wrap" style="border-top:1px solid var(--border)">
+  <h2>Related tools</h2>
+  <div class="cards">
+    <a class="card" href="/base64-encoder-decoder.html"><b>Base64 Encoder &amp; Decoder</b><span>Encode or decode Base64 text, UTF-8 safe.</span></a>
+    <a class="card" href="/case-converter.html"><b>Case Converter</b><span>Convert between eight naming and letter cases.</span></a>
+    <a class="card" href="/json-formatter.html"><b>JSON Formatter &amp; Validator</b><span>Pretty-print, minify and validate JSON with precise error positions.</span></a>
+    <a class="card" href="/word-counter.html"><b>Word &amp; Character Counter</b><span>Live word, character and reading-time counts.</span></a>
+  </div>
+</section>
+
+<footer class="site"><div class="wrap">
+  <a href="/tools/">All tools</a><a href="/pdfmint/">PDF tools</a><a href="/pixmint/">Image tools</a><a href="/">Home</a>
+  <p style="margin-top:10px">Everything runs in your browser. Nothing is uploaded.</p>
+</div></footer>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  function say(msg, cls){ var s = $('status'); if(!s) return; s.textContent = msg || ''; s.className = 'status' + (cls ? ' ' + cls : ''); }
+  function copy(text, btn){
+    navigator.clipboard.writeText(text).then(function(){
+      var old = btn.textContent; btn.textContent = '✓ Copied';
+      setTimeout(function(){ btn.textContent = old; }, 1400);
+    }).catch(function(){ say('Copy failed — select the text and copy manually.', 'err'); });
+  }
+  var input = $('in'), out = $('out'), parts = $('parts');
+  function encode(){
+    var v = input.value;
+    if (!v) { say('Paste something to encode.', 'err'); out.textContent = ''; return; }
+    var mode = $('mode').value, r;
+    if (mode === 'component') r = encodeURIComponent(v);
+    else if (mode === 'full') r = encodeURI(v);
+    else r = encodeURIComponent(v).replace(/%20/g, '+');
+    out.textContent = r;
+    var changed = 0;
+    for (var i = 0; i < v.length; i++) if (v[i] !== r[i]) { changed++; }
+    say('✓ ' + v.length + ' characters in, ' + r.length + ' out', 'ok');
+    parts.textContent = '';
+  }
+  function decode(){
+    var v = input.value.trim();
+    if (!v) { say('Paste something to decode.', 'err'); out.textContent = ''; return; }
+    try {
+      var r = decodeURIComponent(v.replace(/\+/g, ' '));
+      out.textContent = r;
+      say('✓ Decoded ' + v.length + ' characters', 'ok');
+    } catch (e) {
+      out.textContent = '';
+      say('✗ Malformed percent-encoding — a % sign is probably not followed by two hex digits (for example an unencoded % in the original text).', 'err');
+    }
+    parts.textContent = '';
+  }
+  function breakdown(){
+    var v = input.value.trim();
+    if (!v || v.indexOf('://') === -1) { parts.textContent = ''; return; }
+    try {
+      var u = new URL(v);
+      var rows = [['Protocol', u.protocol.replace(':','')], ['Host', u.hostname], ['Port', u.port || '(default)'],
+                  ['Path', u.pathname || '/'], ['Query', u.search || '(none)'], ['Fragment', u.hash || '(none)']];
+      var qs = [];
+      u.searchParams.forEach(function(val, key){ qs.push('  ' + key + ' = ' + val); });
+      parts.textContent = rows.map(function(r){ return r[0] + ': ' + r[1]; }).join('\n') +
+        (qs.length ? '\n\nQuery parameters:\n' + qs.join('\n') : '');
+    } catch (e) { parts.textContent = 'Not a parseable absolute URL.'; }
+  }
+  $('enc').onclick = encode;
+  $('dec').onclick = decode;
+  input.addEventListener('input', breakdown);
+  $('copy').onclick = function(){ if (out.textContent) copy(out.textContent, $('copy')); };
+  breakdown();
+})();
+</script>
+</body>
+</html>
