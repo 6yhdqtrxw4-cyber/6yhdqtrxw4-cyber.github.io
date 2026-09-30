@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Hash Generator — SHA-256, SHA-512 and SHA-1 Checksums Online</title>
+<meta name="description" content="Generate SHA-256, SHA-384, SHA-512 and SHA-1 hashes from text instantly in your browser. Useful for verifying checksums and API signatures."/>
+<meta name="keywords" content="sha256 generator, hash generator, sha512, sha1 hash, checksum tool, hash text online"/>
+<link rel="canonical" href="https://6yhdqtrxw4-cyber.github.io/hash-generator.html"/>
+<meta property="og:title" content="Hash Generator — SHA-256, SHA-512 and SHA-1 Checksums Online"/>
+<meta property="og:description" content="Generate SHA-256, SHA-384, SHA-512 and SHA-1 hashes from text instantly in your browser. Useful for verifying checksums and API signatures."/>
+<meta property="og:type" content="website"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Hash Generator — SHA-256, SHA-384, SHA-512 and SHA-1","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Generate SHA-256, SHA-384, SHA-512 and SHA-1 hashes from text instantly in your browser. Useful for verifying checksums and API signatures."}
+</script>
+<style>
+:root{--bg:#ffffff;--soft:#f7f8fa;--panel:#ffffff;--text:#16181d;--muted:#5b6472;--border:#e4e7ec;--accent:#2563eb;--accent-soft:#eff4ff;--ok:#15803d;--err:#b91c1c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.site{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:5}
+header.site .wrap{display:flex;align-items:center;gap:14px;padding:12px 20px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:17px;letter-spacing:-.2px}
+.logo span{color:var(--accent)}
+header.site nav{margin-left:auto;display:flex;gap:14px;font-size:13.5px;flex-wrap:wrap}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover{color:var(--accent)}
+main{padding:34px 0 10px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.5px;margin-bottom:10px}
+.lead{color:var(--muted);font-size:16.5px;margin-bottom:24px;max-width:660px}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px}
+textarea,input[type=text],input[type=number],select{width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;line-height:1.6;color:var(--text);background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;outline:none}
+textarea{min-height:210px;resize:vertical}
+textarea:focus,input:focus,select:focus{border-color:var(--accent);background:#fff}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+button{font:inherit;font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:9px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer}
+button:hover{border-color:#c9d2e0}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.primary:hover{filter:brightness(1.07)}
+label.chk{display:flex;align-items:center;gap:7px;font-size:13.5px;color:var(--muted)}
+.out{margin-top:12px;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;min-height:52px;max-height:340px;overflow:auto}
+.status{font-size:13.5px;margin-top:10px}
+.status.ok{color:var(--ok)}.status.err{color:var(--err)}
+section.explain{margin-top:44px;padding-top:30px;border-top:1px solid var(--border)}
+section.explain h2{font-size:21px;margin:26px 0 10px;letter-spacing:-.2px}
+section.explain h2:first-child{margin-top:0}
+section.explain p,section.explain li{color:#333a45;font-size:15px}
+section.explain ul,section.explain ol{margin:10px 0 10px 22px}
+section.explain li{margin:5px 0}
+details{border-top:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:600;font-size:15px}
+details p{margin-top:8px;color:var(--muted);font-size:14.5px}
+footer.site{border-top:1px solid var(--border);margin-top:52px;padding:26px 0 40px;color:var(--muted);font-size:13.5px}
+footer.site a{color:var(--muted);text-decoration:none;margin-right:14px;display:inline-block}
+footer.site a:hover{color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}
+a.card{display:block;padding:14px 16px;border:1px solid var(--border);border-radius:11px;text-decoration:none;color:inherit;background:#fff}
+a.card:hover{border-color:#c9d2e0}
+a.card b{display:block;font-size:14.5px;margin-bottom:3px}
+a.card span{color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <div class="logo">Tool<span>Mint</span></div>
+  <nav>
+    <a href="/tools/">All tools</a>
+    <a href="/pdfmint/">PDF</a>
+    <a href="/pixmint/">Images</a>
+    <a href="/">Home</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <h1>Hash Generator — SHA-256, SHA-384, SHA-512 and SHA-1</h1>
+  <p class="lead">Generate a cryptographic hash of any text. Everything is computed locally with the browser’s own Web Crypto API.</p>
+
+  <div class="panel">
+    <textarea id="in" placeholder="Type or paste the text to hash…" style="min-height:150px"></textarea>
+    <div class="row">
+      <button class="primary" id="run">Generate hashes</button>
+      <button id="clear">Clear</button>
+    </div>
+    <div class="out" id="out" style="font-family:ui-monospace,monospace;min-height:120px"></div>
+    <div class="out" id="verify" style="font-family:inherit;min-height:0;display:none"></div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <section class="explain">
+    <h2>What a hash is, and what it is for</h2>
+    <p>A cryptographic hash function takes any amount of input and produces a fixed-length output — a fingerprint. SHA-256 always produces 64 hexadecimal characters, whether you feed it one letter or a gigabyte. Change a single character of the input and the output changes completely and unpredictably.</p>
+    <p>That combination — fixed size, one-way, and avalanche on any change — makes hashes useful for three things: <strong>verifying</strong> that a file or message arrived unchanged, <strong>comparing</strong> large values cheaply, and <strong>storing</strong> secrets so the original cannot be recovered.</p>
+
+    <h2>Which algorithm to use</h2>
+    <ul>
+      <li><strong>SHA-256</strong> — the default choice, and what you want for checksums, signatures and content addressing. Part of the SHA-2 family.</li>
+      <li><strong>SHA-384 / SHA-512</strong> — longer variants of the same family. Slower, marginally stronger, required by some compliance rules. Useful when you want a hash that cannot be confused with a SHA-256 one.</li>
+      <li><strong>SHA-1</strong> — <em>broken for security</em>. Practical collision attacks were demonstrated in 2017. It is included here only because old systems and git still emit it; never use it for anything new.</li>
+      <li><strong>MD5</strong> — also broken, and not available through the browser's Web Crypto API at all, because providing it would encourage its use.</li>
+    </ul>
+
+    <h2>What hashing is not</h2>
+    <p>A plain hash is <strong>not</strong> a way to store passwords. Because the same input always gives the same output, an attacker with a list of common passwords can precompute a lookup table in minutes. Password storage needs a deliberately slow, salted function — bcrypt, scrypt or Argon2 — not a fast hash like SHA-256. If you are building authentication, use a library designed for it.</p>
+
+    <h2>Verifying a download</h2>
+    <p>Paste the published checksum and the text together and this tool will split them apart, detect whether it is a 64-character (SHA-256) or 40-character (SHA-1) value, and tell you whether they match. For files, run the hash on your machine instead — <code>sha256sum file</code> on Linux, <code>certutil -hashfile file SHA256</code> on Windows.</p>
+
+    <h2>FAQ</h2>
+    <details open><summary>Is my text sent to a server?</summary><p>No. Hashing uses <code>crypto.subtle.digest</code>, which is built into the browser. This works with the network disconnected.</p></details>
+    <details><summary>Can I hash a file here?</summary><p>Not currently — this tool works on text. Hashing a large file in the browser is possible with <code>File.stream()</code> but needs an incremental digest implementation, which the Web Crypto API does not expose.</p></details>
+    <details><summary>Can a hash be reversed?</summary><p>No, not by design. There is no key and no inverse operation. The only practical attack is guessing the input and hashing it to compare — which is exactly why short or predictable inputs, like passwords, are unsafe to hash this way.</p></details>
+    <details><summary>Why does hashing the same text twice give the same result?</summary><p>That determinism is the point: it is what lets two parties compare fingerprints without exchanging the original data.</p></details>
+  </section>
+</main>
+
+<section class="explain wrap" style="border-top:1px solid var(--border)">
+  <h2>Related tools</h2>
+  <div class="cards">
+    <a class="card" href="/color-converter.html"><b>Color Converter — HEX, RGB, HSL and HSV</b><span>Convert HEX, RGB, HSL and HSV with contrast checks.</span></a>
+    <a class="card" href="/password-generator.html"><b>Password Generator</b><span>Generate strong random passwords and passphrases.</span></a>
+    <a class="card" href="/timestamp-converter.html"><b>Unix Timestamp Converter</b><span>Convert epoch timestamps to dates and back.</span></a>
+  </div>
+</section>
+
+<footer class="site"><div class="wrap">
+  <a href="/tools/">All tools</a><a href="/pdfmint/">PDF tools</a><a href="/pixmint/">Image tools</a><a href="/">Home</a>
+  <p style="margin-top:10px">Everything runs in your browser. Nothing is uploaded.</p>
+</div></footer>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  function say(msg, cls){ var s = $('status'); if(!s) return; s.textContent = msg || ''; s.className = 'status' + (cls ? ' ' + cls : ''); }
+  function copy(text, btn){
+    navigator.clipboard.writeText(text).then(function(){
+      var old = btn.textContent; btn.textContent = '✓ Copied';
+      setTimeout(function(){ btn.textContent = old; }, 1400);
+    }).catch(function(){ say('Copy failed — select the text and copy manually.', 'err'); });
+  }
+  var input = $('in'), out = $('out');
+  function buf2hex(buf){ return [...new Uint8Array(buf)].map(function(b){ return b.toString(16).padStart(2,'0'); }).join(''); }
+  async function digest(algo, text){
+    var data = new TextEncoder().encode(text);
+    var buf = await crypto.subtle.digest(algo, data);
+    return buf2hex(buf);
+  }
+  async function run(){
+    var text = input.value;
+    if (!text) { say('✗ Enter some text to hash.', 'err'); out.textContent = ''; return; }
+    var algos = ['SHA-256', 'SHA-384', 'SHA-512', 'SHA-1'];
+    var lines = [];
+    for (var i = 0; i < algos.length; i++) {
+      try {
+        var h = await digest(algos[i], text);
+        lines.push(algos[i].padEnd(9) + h);
+      } catch (e) { lines.push(algos[i].padEnd(9) + '(unsupported)'); }
+    }
+    var bytes = new TextEncoder().encode(text).length;
+    out.textContent = lines.join('\n');
+    say('✓ Hashed ' + bytes + ' byte' + (bytes === 1 ? '' : 's'), 'ok');
+  }
+  $('run').onclick = run;
+  $('clear').onclick = function(){ input.value = ''; out.textContent = ''; $('verify').style.display = 'none'; say(''); input.focus(); };
+  input.addEventListener('input', function(){ $('verify').style.display = 'none'; });
+
+  // If the input looks like a known checksum, compare against it
+  input.addEventListener('paste', function(){
+    setTimeout(async function(){
+      var v = input.value.trim();
+      var m = v.match(/\b([0-9a-f]{64})\b/i) || v.match(/\b([0-9a-f]{40})\b/i);
+      if (!m) return;
+      var target = m[1].toLowerCase();
+      var algo = target.length === 64 ? 'SHA-256' : 'SHA-1';
+      var body = v.replace(m[0], '').trim();
+      if (!body) return;
+      var got = await digest(algo, body);
+      var ok = got === target;
+      input.value = body;
+      await run();
+      $('verify').style.display = 'block';
+      $('verify').innerHTML = ok
+        ? '✅ 你粘贴的 ' + algo + ' 校验和与这段文本<strong>匹配</strong>。'
+        : '❌ <strong>不匹配</strong>。粘贴的校验和是 ' + target.slice(0,16) + '…，而这段文本的 ' + algo + ' 是 ' + got.slice(0,16) + '…';
+      say(ok ? '✓ 校验和匹配' : '✗ 校验和不匹配', ok ? 'ok' : 'err');
+    }, 60);
+  });
+})();
+</script>
+</body>
+</html>
