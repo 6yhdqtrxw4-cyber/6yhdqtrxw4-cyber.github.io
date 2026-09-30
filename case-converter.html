@@ -167,7 +167,7 @@ a.card span{color:var(--muted);font-size:13px}
   ['upper','lower','sentence','title','camel','pascal','snake','kebab'].forEach(function(k){
     $(k).onclick = function(){
       var v = input.value;
-      if (!v.trim()) { say('Type something to convert.', 'err'); return; }
+      if (!v.trim()) { say('✗ Type something to convert.', 'err'); return; }
       out.textContent = out8[k](v);
       say('✓ Converted ' + v.length + ' characters', 'ok');
     };
