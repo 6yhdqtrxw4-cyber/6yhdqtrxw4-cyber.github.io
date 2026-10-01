@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JWT Decoder — Read JSON Web Token Header and Payload Online</title>
+<meta name="description" content="Decode a JSON Web Token to see its header, payload and expiry in readable form. Runs entirely in your browser — the token is never sent anywhere."/>
+<meta name="keywords" content="jwt decoder, json web token decoder, decode jwt, jwt parser, jwt payload, bearer token decoder"/>
+<link rel="canonical" href="https://6yhdqtrxw4-cyber.github.io/jwt-decoder.html"/>
+<meta property="og:title" content="JWT Decoder — Read JSON Web Token Header and Payload Online"/>
+<meta property="og:description" content="Decode a JSON Web Token to see its header, payload and expiry in readable form. Runs entirely in your browser — the token is never sent anywhere."/>
+<meta property="og:type" content="website"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"JWT Decoder","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Decode a JSON Web Token to see its header, payload and expiry in readable form. Runs entirely in your browser — the token is never sent anywhere."}
+</script>
+<style>
+:root{--bg:#ffffff;--soft:#f7f8fa;--panel:#ffffff;--text:#16181d;--muted:#5b6472;--border:#e4e7ec;--accent:#2563eb;--accent-soft:#eff4ff;--ok:#15803d;--err:#b91c1c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.site{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:5}
+header.site .wrap{display:flex;align-items:center;gap:14px;padding:12px 20px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:17px;letter-spacing:-.2px}
+.logo span{color:var(--accent)}
+header.site nav{margin-left:auto;display:flex;gap:14px;font-size:13.5px;flex-wrap:wrap}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover{color:var(--accent)}
+main{padding:34px 0 10px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.5px;margin-bottom:10px}
+.lead{color:var(--muted);font-size:16.5px;margin-bottom:24px;max-width:660px}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px}
+textarea,input[type=text],input[type=number],select{width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;line-height:1.6;color:var(--text);background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;outline:none}
+textarea{min-height:210px;resize:vertical}
+textarea:focus,input:focus,select:focus{border-color:var(--accent);background:#fff}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+button{font:inherit;font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:9px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer}
+button:hover{border-color:#c9d2e0}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.primary:hover{filter:brightness(1.07)}
+label.chk{display:flex;align-items:center;gap:7px;font-size:13.5px;color:var(--muted)}
+.out{margin-top:12px;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;min-height:52px;max-height:340px;overflow:auto}
+.status{font-size:13.5px;margin-top:10px}
+.status.ok{color:var(--ok)}.status.err{color:var(--err)}
+section.explain{margin-top:44px;padding-top:30px;border-top:1px solid var(--border)}
+section.explain h2{font-size:21px;margin:26px 0 10px;letter-spacing:-.2px}
+section.explain h2:first-child{margin-top:0}
+section.explain p,section.explain li{color:#333a45;font-size:15px}
+section.explain ul,section.explain ol{margin:10px 0 10px 22px}
+section.explain li{margin:5px 0}
+details{border-top:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:600;font-size:15px}
+details p{margin-top:8px;color:var(--muted);font-size:14.5px}
+footer.site{border-top:1px solid var(--border);margin-top:52px;padding:26px 0 40px;color:var(--muted);font-size:13.5px}
+footer.site a{color:var(--muted);text-decoration:none;margin-right:14px;display:inline-block}
+footer.site a:hover{color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}
+a.card{display:block;padding:14px 16px;border:1px solid var(--border);border-radius:11px;text-decoration:none;color:inherit;background:#fff}
+a.card:hover{border-color:#c9d2e0}
+a.card b{display:block;font-size:14.5px;margin-bottom:3px}
+a.card span{color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <div class="logo">Tool<span>Mint</span></div>
+  <nav>
+    <a href="/tools/">All tools</a>
+    <a href="/pdfmint/">PDF</a>
+    <a href="/pixmint/">Images</a>
+    <a href="/">Home</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <h1>JWT Decoder</h1>
+  <p class="lead">Paste a JWT to read its header and payload, see exactly when it expires, and understand what each claim means.</p>
+
+  <div class="panel">
+    <textarea id="in" placeholder="Paste a JSON Web Token (eyJhbGciOi... .eyJzdWIiOi... .signature)" style="min-height:120px"></textarea>
+    <div class="row">
+      <button class="primary" id="run">Decode</button>
+      <button id="clear">Clear</button>
+      <label class="chk"><input type="checkbox" id="verifyNote" checked/> 显示签名验证说明</label>
+    </div>
+    <div class="out" id="out" style="font-family:ui-monospace,monospace;min-height:60px;max-height:none"></div>
+    <div class="out" id="claims" style="font-family:inherit;font-size:13.5px;min-height:0;max-height:none"></div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <section class="explain">
+    <h2>What a JWT actually is</h2>
+    <p>A JSON Web Token is three Base64URL-encoded strings joined by dots:</p>
+    <p style="font-family:ui-monospace,monospace;font-size:13.5px;background:#f7f8fa;padding:10px;border-radius:8px;overflow:auto">header . payload . signature</p>
+    <ul>
+      <li><strong>Header</strong> — JSON describing the token: which algorithm signed it (<code>alg</code>) and which key was used (<code>kid</code>).</li>
+      <li><strong>Payload</strong> — JSON holding the <em>claims</em>: who the user is, what they may do, and when the token expires.</li>
+      <li><strong>Signature</strong> — a cryptographic seal over the first two parts, made with a key only the issuer has.</li>
+    </ul>
+    <p>Base64URL is just Base64 with two characters changed so the result is safe inside a URL. It is an encoding, not encryption — which is the single most important thing to understand about JWTs.</p>
+
+    <h2>The payload is readable by anyone</h2>
+    <p>Because the first two segments are only encoded, <strong>anyone holding the token can read every claim inside it</strong>. Intercept it, or just paste it here, and the contents are plain. Never put a password, an API key, a national ID number or any other secret in a JWT payload. The signature prevents <em>tampering</em>, not <em>reading</em>.</p>
+    <p>That is also why a JWT must only travel over HTTPS, and why it should be stored where script cannot read it if your threat model includes cross-site scripting.</p>
+
+    <h2>Why decoding is not verification</h2>
+    <p>This tool — and every online decoder — can only read the token. Verifying it means recomputing the signature with the issuer's secret or public key and comparing. Without that step, a decoded payload is worthless as evidence: an attacker can trivially construct a token with <code>"role":"admin"</code> and no valid signature at all, and any server that trusts the payload without checking the signature will hand over the account.</p>
+    <p>That failure has a name — the <em>alg:none</em> attack — and it remains common enough to be worth knowing: a server that reads the <code>alg</code> header from the token itself, rather than fixing the expected algorithm, can be told to expect no signature at all.</p>
+
+    <h2>Reading the timestamps</h2>
+    <p>Three claims carry Unix timestamps in seconds: <code>iat</code> (issued at), <code>nbf</code> (not before) and <code>exp</code> (expires at). A server must reject a token whose <code>exp</code> is in the past, and one whose <code>nbf</code> is in the future. A token with no <code>exp</code> at all is a common and serious misconfiguration — it is valid forever if it leaks.</p>
+    <p>Short lifetimes are the point: access tokens of 5–60 minutes limit the damage from a stolen token, with a separate long-lived refresh token used to obtain new ones.</p>
+
+    <h2>FAQ</h2>
+    <details open><summary>Is my token sent to a server?</summary><p>No. Decoding is Base64URL plus <code>JSON.parse</code>, both of which run in this tab. That matters more than usual here — a JWT is a live credential, so pasting one into an unknown decoder is a real risk. This page keeps it local, and you can verify that by disconnecting from the internet before pasting.</p></details>
+    <details><summary>Can I get the original values back from the signature?</summary><p>No. The signature is a one-way hash of the header and payload. It cannot be reversed, and it does not contain the key.</p></details>
+    <details><summary>What if the token has five parts?</summary><p>Five segments means it is a JWE — JSON Web <em>Encryption</em>, where the payload really is encrypted. A decoder like this one cannot read it without the decryption key.</p></details>
+    <details><summary>Is it safe to paste a production token here?</summary><p>The decoding happens locally, but a token is still a credential. Prefer a token from a development environment, and treat any token you have pasted anywhere as worth rotating.</p></details>
+  </section>
+</main>
+
+<section class="explain wrap" style="border-top:1px solid var(--border)">
+  <h2>Related tools</h2>
+  <div class="cards">
+    <a class="card" href="/color-converter.html"><b>Color Converter — HEX, RGB, HSL and HSV</b><span>Convert HEX, RGB, HSL and HSV with contrast checks.</span></a>
+    <a class="card" href="/hash-generator.html"><b>Hash Generator — SHA-256, SHA-384, SHA-512 and SHA-1</b><span>Generate SHA-256, SHA-384, SHA-512 and SHA-1 hashes.</span></a>
+    <a class="card" href="/password-generator.html"><b>Password Generator</b><span>Generate strong random passwords and passphrases.</span></a>
+    <a class="card" href="/timestamp-converter.html"><b>Unix Timestamp Converter</b><span>Convert epoch timestamps to dates and back.</span></a>
+    <a class="card" href="/uuid-generator.html"><b>UUID / GUID Generator</b><span>Generate random v4 UUIDs in bulk, any format.</span></a>
+  </div>
+</section>
+
+<footer class="site"><div class="wrap">
+  <a href="/tools/">All tools</a><a href="/pdfmint/">PDF tools</a><a href="/pixmint/">Image tools</a><a href="/">Home</a>
+  <p style="margin-top:10px">Everything runs in your browser. Nothing is uploaded.</p>
+</div></footer>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  function say(msg, cls){ var s = $('status'); if(!s) return; s.textContent = msg || ''; s.className = 'status' + (cls ? ' ' + cls : ''); }
+  function copy(text, btn){
+    navigator.clipboard.writeText(text).then(function(){
+      var old = btn.textContent; btn.textContent = '✓ Copied';
+      setTimeout(function(){ btn.textContent = old; }, 1400);
+    }).catch(function(){ say('Copy failed — select the text and copy manually.', 'err'); });
+  }
+  function b64urlToStr(s){
+    s = s.replace(/-/g, '+').replace(/_/g, '/');
+    while (s.length % 4) s += '=';
+    var bin = atob(s);
+    var bytes = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return new TextDecoder('utf-8', { fatal: false }).decode(bytes);
+  }
+  var MEANING = {
+    iss: 'Issuer — who created and signed this token',
+    sub: 'Subject — who the token is about (usually a user id)',
+    aud: 'Audience — who the token is intended for; a server should reject tokens not addressed to it',
+    exp: 'Expiration time — after this instant the token must be rejected',
+    nbf: 'Not before — the token must be rejected before this instant',
+    iat: 'Issued at — when the token was created',
+    jti: 'JWT ID — a unique identifier, used to prevent replay',
+    scope: 'Scopes — what the token is allowed to do',
+    azp: 'Authorized party — the client the token was issued to',
+    email: 'Email address of the subject',
+    name: 'Display name of the subject',
+    roles: 'Roles granted to the subject',
+    kid: 'Key ID (header) — which signing key was used',
+    alg: 'Algorithm (header) — the signing algorithm',
+    typ: 'Type (header) — normally "JWT"'
+  };
+  function ts(v){
+    if (typeof v !== 'number') return null;
+    var d = new Date(v * 1000);
+    if (isNaN(d.getTime())) return null;
+    return d.toISOString().replace('.000Z', 'Z') + '  (' + rel(v) + ')';
+  }
+  function rel(v){
+    var diff = v - Math.floor(Date.now() / 1000);
+    var a = Math.abs(diff);
+    var units = [['day',86400],['hour',3600],['minute',60],['second',1]];
+    for (var i = 0; i < units.length; i++) {
+      if (a >= units[i][1]) {
+        var n = Math.floor(a / units[i][1]);
+        return n + ' ' + units[i][0] + (n === 1 ? '' : 's') + (diff < 0 ? ' ago' : ' from now');
+      }
+    }
+    return diff < 0 ? 'just now' : 'in a moment';
+  }
+
+  function run(){
+    var raw = $('in').value.trim().replace(/^Bearer\s+/i, '');
+    if (!raw) { say('✗ Paste a token first.', 'err'); $('out').textContent = ''; $('claims').textContent = ''; return; }
+    var parts = raw.split('.');
+    if (parts.length !== 3) {
+      say('✗ A JWT has exactly three parts separated by dots — this has ' + parts.length + '. (A JWE has five.)', 'err');
+      $('out').textContent = ''; $('claims').textContent = '';
+      return;
+    }
+    var header, payload;
+    try { header = JSON.parse(b64urlToStr(parts[0])); }
+    catch (e) { say('✗ The header is not valid JSON — the token looks truncated or corrupted.', 'err'); return; }
+    try { payload = JSON.parse(b64urlToStr(parts[1])); }
+    catch (e) { say('✗ The payload is not valid JSON.', 'err'); return; }
+
+    $('out').textContent =
+      'HEADER\n' + JSON.stringify(header, null, 2) +
+      '\n\nPAYLOAD\n' + JSON.stringify(payload, null, 2) +
+      '\n\nSIGNATURE (not verified)\n' + parts[2].slice(0, 80) + (parts[2].length > 80 ? '…' : '');
+
+    var rows = [];
+    var now = Math.floor(Date.now() / 1000);
+    if (typeof payload.exp === 'number') {
+      rows.push(payload.exp < now
+        ? '<div style="color:#b91c1c"><strong>⚠️ This token expired ' + rel(payload.exp).replace(' ago', '') + ' ago.</strong> It should not be accepted.</div>'
+        : '<div style="color:#15803d"><strong>✅ Valid for another ' + rel(payload.exp).replace(' from now', '') + '.</strong></div>');
+    } else {
+      rows.push('<div style="color:#b45309">⚠️ No <code>exp</code> claim — this token never expires on its own.</div>');
+    }
+    Object.keys(payload).forEach(function(k){
+      var v = payload[k];
+      var line = '<li><code>' + k + '</code>';
+      if (MEANING[k]) line += ' <span style="color:#5b6472">— ' + MEANING[k] + '</span>';
+      if (k === 'exp' || k === 'iat' || k === 'nbf') {
+        line += '<br>&nbsp;&nbsp;&nbsp;' + (ts(v) || String(v));
+      } else if (typeof v === 'object') {
+        line += '<br>&nbsp;&nbsp;&nbsp;<code>' + JSON.stringify(v) + '</code>';
+      } else {
+        line += ' = <code>' + String(v) + '</code>';
+      }
+      rows.push(line + '</li>');
+    });
+    $('claims').innerHTML = rows[0] +
+      '<strong style="display:block;margin-top:10px">Claims</strong><ul style="margin:6px 0 0 20px">' + rows.slice(1).join('') + '</ul>' +
+      '<p style="margin-top:12px;color:#5b6472"><strong>This tool does not verify the signature.</strong> Decoding proves nothing about authenticity: anyone can craft a token with any payload. Only your server, holding the signing key, can tell a real token from a forged one.</p>';
+    say('✓ Decoded — header, payload and ' + Object.keys(payload).length + ' claims', 'ok');
+  }
+  $('run').onclick = run;
+  $('clear').onclick = function(){ $('in').value = ''; $('out').textContent = ''; $('claims').textContent = ''; say(''); $('in').focus(); };
+  $('in').addEventListener('input', function(){ if ($('in').value.trim().split('.').length === 3) run(); });
+})();
+</script>
+</body>
+</html>
