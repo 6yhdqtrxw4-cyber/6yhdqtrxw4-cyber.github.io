@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Image Resizer — Resize Images to Exact Pixels or Social Media Sizes</title>
+<meta name="description" content="Resize images to exact pixel dimensions or ready-made social media presets. Lock the aspect ratio, batch process, and download as JPG, PNG or WebP."/>
+<meta name="keywords" content="image resizer, resize image online, resize photo, social media image sizes, resize picture pixels"/>
+<link rel="canonical" href="https://6yhdqtrxw4-cyber.github.io/image-resizer.html"/>
+<meta property="og:title" content="Image Resizer — Resize Images to Exact Pixels or Social Media Sizes"/>
+<meta property="og:description" content="Resize images to exact pixel dimensions or ready-made social media presets. Lock the aspect ratio, batch process, and download as JPG, PNG or WebP."/>
+<meta property="og:type" content="website"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Image Resizer","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Resize images to exact pixel dimensions or ready-made social media presets. Lock the aspect ratio, batch process, and download as JPG, PNG or WebP."}
+</script>
+<style>
+:root{--bg:#ffffff;--soft:#f7f8fa;--panel:#ffffff;--text:#16181d;--muted:#5b6472;--border:#e4e7ec;--accent:#2563eb;--accent-soft:#eff4ff;--ok:#15803d;--err:#b91c1c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.site{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:5}
+header.site .wrap{display:flex;align-items:center;gap:14px;padding:12px 20px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:17px;letter-spacing:-.2px}
+.logo span{color:var(--accent)}
+header.site nav{margin-left:auto;display:flex;gap:14px;font-size:13.5px;flex-wrap:wrap}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover{color:var(--accent)}
+main{padding:34px 0 10px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.5px;margin-bottom:10px}
+.lead{color:var(--muted);font-size:16.5px;margin-bottom:24px;max-width:660px}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px}
+textarea,input[type=text],input[type=number],select{width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;line-height:1.6;color:var(--text);background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;outline:none}
+textarea{min-height:210px;resize:vertical}
+textarea:focus,input:focus,select:focus{border-color:var(--accent);background:#fff}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+button{font:inherit;font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:9px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer}
+button:hover{border-color:#c9d2e0}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.primary:hover{filter:brightness(1.07)}
+label.chk{display:flex;align-items:center;gap:7px;font-size:13.5px;color:var(--muted)}
+.out{margin-top:12px;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;min-height:52px;max-height:340px;overflow:auto}
+.status{font-size:13.5px;margin-top:10px}
+.status.ok{color:var(--ok)}.status.err{color:var(--err)}
+section.explain{margin-top:44px;padding-top:30px;border-top:1px solid var(--border)}
+section.explain h2{font-size:21px;margin:26px 0 10px;letter-spacing:-.2px}
+section.explain h2:first-child{margin-top:0}
+section.explain p,section.explain li{color:#333a45;font-size:15px}
+section.explain ul,section.explain ol{margin:10px 0 10px 22px}
+section.explain li{margin:5px 0}
+details{border-top:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:600;font-size:15px}
+details p{margin-top:8px;color:var(--muted);font-size:14.5px}
+footer.site{border-top:1px solid var(--border);margin-top:52px;padding:26px 0 40px;color:var(--muted);font-size:13.5px}
+footer.site a{color:var(--muted);text-decoration:none;margin-right:14px;display:inline-block}
+footer.site a:hover{color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}
+a.card{display:block;padding:14px 16px;border:1px solid var(--border);border-radius:11px;text-decoration:none;color:inherit;background:#fff}
+a.card:hover{border-color:#c9d2e0}
+a.card b{display:block;font-size:14.5px;margin-bottom:3px}
+a.card span{color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <div class="logo">Tool<span>Mint</span></div>
+  <nav>
+    <a href="/tools/">All tools</a>
+    <a href="/pdfmint/">PDF</a>
+    <a href="/pixmint/">Images</a>
+    <a href="/">Home</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <h1>Image Resizer</h1>
+  <p class="lead">Set exact pixel dimensions or pick a preset, lock the aspect ratio if you want, and download the result — all locally.</p>
+
+  <div class="panel">
+    <div class="row" style="margin-top:0">
+      <input type="file" id="files" accept="image/*" multiple style="flex:1;min-width:240px;font-family:inherit;font-size:13.5px;background:#f7f8fa;border:1px solid #e4e7ec;border-radius:10px;padding:10px"/>
+    </div>
+    <div class="row">
+      <label class="chk">Preset <select id="preset" style="width:auto">
+        <option value="">Custom…</option>
+        <option value="1920x1080">Full HD — 1920×1080</option>
+        <option value="1280x720">HD — 1280×720</option>
+        <option value="1080x1080">Instagram square — 1080×1080</option>
+        <option value="1080x1350">Instagram portrait — 1080×1350</option>
+        <option value="1080x1920">Story / Reel — 1080×1920</option>
+        <option value="1200x630">Open Graph / Facebook — 1200×630</option>
+        <option value="1500x500">X / Twitter header — 1500×500</option>
+        <option value="1280x720">YouTube thumbnail — 1280×720</option>
+        <option value="800x800">Product photo — 800×800</option>
+        <option value="400x400">Avatar — 400×400</option>
+      </select></label>
+      <label class="chk">W <input type="number" id="w" value="1200" min="1" max="20000" style="width:90px;margin-left:6px"/></label>
+      <label class="chk">H <input type="number" id="h" value="630" min="1" max="20000" style="width:90px;margin-left:6px"/></label>
+      <label class="chk"><input type="checkbox" id="lock" checked/> Lock ratio</label>
+    </div>
+    <div class="row">
+      <label class="chk">Fit <select id="fit" style="width:auto">
+        <option value="cover">Crop to fill (cover)</option>
+        <option value="contain">Fit inside (contain)</option>
+        <option value="stretch">Stretch (ignore ratio)</option>
+      </select></label>
+      <label class="chk">Output <select id="fmt" style="width:auto"><option value="image/jpeg">JPEG</option><option value="image/png">PNG</option><option value="image/webp">WebP</option></select></label>
+      <button class="primary" id="run">Resize</button>
+      <button id="dl">Download all</button>
+    </div>
+    <div class="out" id="out" style="font-family:inherit;font-size:13.5px;min-height:56px;max-height:none"></div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <section class="explain">
+    <h2>Resize, resample, or crop — they are not the same thing</h2>
+    <p>People use "resize" for three different operations, and the tool that guesses wrong ruins the image:</p>
+    <ul>
+      <li><strong>Stretch</strong> forces the image into the new box regardless of shape. Fast, and almost always wrong — faces get wider and circles become ellipses.</li>
+      <li><strong>Fit inside (contain)</strong> scales the whole image so it fits, adding empty space where the shape does not match. Nothing is lost, but you get letterboxing.</li>
+      <li><strong>Crop to fill (cover)</strong> scales until the box is covered, then trims the overflow. The result fills the frame edge to edge with nothing distorted, at the cost of losing the outer parts of the image.</li>
+    </ul>
+    <p>Cover is what social platforms actually do to your upload, so choosing it here lets you see the crop before publishing rather than after.</p>
+
+    <h2>The presets, and why those numbers</h2>
+    <ul>
+      <li><strong>1200×630</strong> — the Open Graph standard. This is the preview card shown when a link is shared on Facebook, LinkedIn, Slack or Discord.</li>
+      <li><strong>1080×1080</strong> — Instagram's square post, still the safest crop because the feed can display it without further trimming.</li>
+      <li><strong>1080×1920</strong> — Stories, Reels and TikTok. Vertical and full-screen.</li>
+      <li><strong>1280×720</strong> — YouTube thumbnails, and HD video frames.</li>
+      <li><strong>1500×500</strong> — the X/Twitter profile header, which crops aggressively on mobile.</li>
+    </ul>
+
+    <h2>Upscaling does not add detail</h2>
+    <p>If your source is 800 pixels wide and you ask for 2400, the browser interpolates: it invents pixels by blending their neighbours. The result looks softer than the original, never sharper. A small image cannot be made large and detailed by resizing — if you need more resolution, you need a better source or a purpose-built upscaler.</p>
+
+    <h2>Downscaling quality</h2>
+    <p>Shrinking is the direction that can genuinely be improved. This tool enables the browser's high-quality smoothing, which averages neighbouring pixels instead of sampling one of them. That is the difference between a clean reduction and one with jagged edges on fine detail — the reason a 4000-pixel photo reduced to 400 can look either crisp or noisy depending on the algorithm.</p>
+
+    <h2>FAQ</h2>
+    <details open><summary>Are my images uploaded?</summary><p>No. Everything runs on a canvas in this tab.</p></details>
+    <details><summary>What is the largest size I can output?</summary><p>Browsers cap canvas dimensions — commonly 16,384 pixels on a side, and a total area limit that varies. Asking for more than that will fail or produce a blank image.</p></details>
+    <details><summary>Why does my transparent PNG have a white background?</summary><p>You selected JPEG, which has no alpha channel, so transparency is filled with white. Choose PNG or WebP to keep it.</p></details>
+    <details><summary>Can I resize many images to the same size at once?</summary><p>Yes — select multiple files, set the dimensions once, and press Resize. All of them use identical settings, which is what you want for a consistent gallery or product listing.</p></details>
+  </section>
+</main>
+
+<section class="explain wrap" style="border-top:1px solid var(--border)">
+  <h2>Related tools</h2>
+  <div class="cards">
+    <a class="card" href="/image-compressor.html"><b>Image Compressor</b><span>Compress JPG, PNG and WebP images with a live size comparison.</span></a>
+  </div>
+</section>
+
+<footer class="site"><div class="wrap">
+  <a href="/tools/">All tools</a><a href="/pdfmint/">PDF tools</a><a href="/pixmint/">Image tools</a><a href="/">Home</a>
+  <p style="margin-top:10px">Everything runs in your browser. Nothing is uploaded.</p>
+</div></footer>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  function say(msg, cls){ var s = $('status'); if(!s) return; s.textContent = msg || ''; s.className = 'status' + (cls ? ' ' + cls : ''); }
+  function copy(text, btn){
+    navigator.clipboard.writeText(text).then(function(){
+      var old = btn.textContent; btn.textContent = '✓ Copied';
+      setTimeout(function(){ btn.textContent = old; }, 1400);
+    }).catch(function(){ say('Copy failed — select the text and copy manually.', 'err'); });
+  }
+  var picked = [], results = [], ratio = 1;
+
+  $('preset').addEventListener('change', function(){
+    var v = $('preset').value;
+    if (!v) return;
+    var p = v.split('x');
+    $('w').value = p[0]; $('h').value = p[1];
+    $('fit').value = 'cover';
+    ratio = (+p[0]) / (+p[1]);
+    picked.length && say('Preset applied — ' + p[0] + '×' + p[1], 'ok');
+  });
+  $('files').addEventListener('change', function(e){
+    var fs = Array.prototype.slice.call(e.target.files || []);
+    if (!fs.length) return;
+    picked = fs; results = [];
+    var f = fs[0];
+    var img = new Image(); var url = URL.createObjectURL(f);
+    img.onload = function(){
+      ratio = img.naturalWidth / img.naturalHeight;
+      $('out').textContent = fs.length + ' file(s) selected.\nFirst: ' + f.name +
+        '\nOriginal size: ' + img.naturalWidth + '×' + img.naturalHeight +
+        '\nOutput will be: ' + $('w').value + '×' + $('h').value;
+      URL.revokeObjectURL(url);
+      if ($('preset').value) return;
+      $('w').value = Math.min(img.naturalWidth, +$('w').value);
+      $('h').value = Math.round((+$('w').value) / ratio);
+      say(fs.length + ' image' + (fs.length === 1 ? '' : 's') + ' ready', 'ok');
+    };
+    img.onerror = function(){ URL.revokeObjectURL(url); say('✗ First file is not a readable image.', 'err'); };
+    img.src = url;
+  });
+
+  // keep the ratio locked while typing
+  $('w').addEventListener('input', function(){
+    if (!$('lock').checked || !ratio) return;
+    $('h').value = Math.max(1, Math.round((+$('w').value) / ratio));
+  });
+  $('h').addEventListener('input', function(){
+    if (!$('lock').checked || !ratio) return;
+    $('w').value = Math.max(1, Math.round((+$('h').value) * ratio));
+  });
+
+  function fmtBytes(n){ return n < 1024 ? n + ' B' : n < 1048576 ? (n / 1024).toFixed(1) + ' KB' : (n / 1048576).toFixed(2) + ' MB'; }
+  function loadImage(file){
+    return new Promise(function(res, rej){
+      var url = URL.createObjectURL(file); var img = new Image();
+      img.onload = function(){ URL.revokeObjectURL(url); res(img); };
+      img.onerror = function(){ URL.revokeObjectURL(url); rej(new Error('bad')); };
+      img.src = url;
+    });
+  }
+
+  $('run').onclick = async function(){
+    if (!picked.length) { say('✗ Choose images first.', 'err'); return; }
+    var W = Math.max(1, +$('w').value || 1), H = Math.max(1, +$('h').value || 1);
+    var fit = $('fit').value, type = $('fmt').value;
+    results = []; var lines = [];
+    $('out').textContent = 'Working…';
+
+    for (var i = 0; i < picked.length; i++) {
+      var f = picked[i];
+      try {
+        var img = await loadImage(f);
+        var c = document.createElement('canvas');
+        c.width = W; c.height = H;
+        var ctx = c.getContext('2d');
+        if (type === 'image/jpeg') { ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, W, H); }
+        ctx.imageSmoothingQuality = 'high';
+
+        if (fit === 'stretch') {
+          ctx.drawImage(img, 0, 0, W, H);
+        } else if (fit === 'contain') {
+          var s = Math.min(W / img.naturalWidth, H / img.naturalHeight);
+          var dw = img.naturalWidth * s, dh = img.naturalHeight * s;
+          ctx.drawImage(img, (W - dw) / 2, (H - dh) / 2, dw, dh);
+        } else {
+          var s2 = Math.max(W / img.naturalWidth, H / img.naturalHeight);
+          var sw = W / s2, sh = H / s2;
+          ctx.drawImage(img, (img.naturalWidth - sw) / 2, (img.naturalHeight - sh) / 2, sw, sh, 0, 0, W, H);
+        }
+
+        var blob = await new Promise(function(res){ c.toBlob(res, type, type === 'image/png' ? undefined : 0.92); });
+        var ext = type === 'image/png' ? 'png' : type === 'image/webp' ? 'webp' : 'jpg';
+        results.push({ name: f.name.replace(/\.[^.]+$/, '') + '-' + W + 'x' + H + '.' + ext, blob: blob });
+        lines.push('✅ ' + f.name + '\n     ' + img.naturalWidth + '×' + img.naturalHeight + '  →  ' + W + '×' + H + '   ' + fmtBytes(f.size) + ' → ' + fmtBytes(blob.size));
+      } catch (e) {
+        lines.push('❌ ' + f.name + ' — not a readable image');
+      }
+    }
+    $('out').innerHTML = lines.join('\n') + '\n\n<strong>' + results.length + ' of ' + picked.length + ' resized to ' + W + '×' + H + '</strong>';
+    say('✓ Resized ' + results.length + ' image' + (results.length === 1 ? '' : 's'), 'ok');
+  };
+
+  function saveBlob(blob, name){
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = name;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  }
+  $('dl').onclick = function(){
+    if (!results.length) { say('✗ Nothing to download yet.', 'err'); return; }
+    results.forEach(function(r, i){ setTimeout(function(){ saveBlob(r.blob, r.name); }, i * 300); });
+    say('✓ Downloading ' + results.length + ' file(s)', 'ok');
+  };
+})();
+</script>
+</body>
+</html>
