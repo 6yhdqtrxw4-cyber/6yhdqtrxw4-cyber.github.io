@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Image Compressor — Reduce JPG, PNG and WebP Size in Your Browser</title>
+<meta name="description" content="Compress images without uploading them. Adjustable quality, optional resizing, and a before/after size comparison for every file. Nothing leaves your device."/>
+<meta name="keywords" content="image compressor, compress jpg, compress png, reduce image size, optimize images, compress photo online"/>
+<link rel="canonical" href="https://6yhdqtrxw4-cyber.github.io/image-compressor.html"/>
+<meta property="og:title" content="Image Compressor — Reduce JPG, PNG and WebP Size in Your Browser"/>
+<meta property="og:description" content="Compress images without uploading them. Adjustable quality, optional resizing, and a before/after size comparison for every file. Nothing leaves your device."/>
+<meta property="og:type" content="website"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Image Compressor","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Compress images without uploading them. Adjustable quality, optional resizing, and a before/after size comparison for every file. Nothing leaves your device."}
+</script>
+<style>
+:root{--bg:#ffffff;--soft:#f7f8fa;--panel:#ffffff;--text:#16181d;--muted:#5b6472;--border:#e4e7ec;--accent:#2563eb;--accent-soft:#eff4ff;--ok:#15803d;--err:#b91c1c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.site{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:5}
+header.site .wrap{display:flex;align-items:center;gap:14px;padding:12px 20px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:17px;letter-spacing:-.2px}
+.logo span{color:var(--accent)}
+header.site nav{margin-left:auto;display:flex;gap:14px;font-size:13.5px;flex-wrap:wrap}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover{color:var(--accent)}
+main{padding:34px 0 10px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.5px;margin-bottom:10px}
+.lead{color:var(--muted);font-size:16.5px;margin-bottom:24px;max-width:660px}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px}
+textarea,input[type=text],input[type=number],select{width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;line-height:1.6;color:var(--text);background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;outline:none}
+textarea{min-height:210px;resize:vertical}
+textarea:focus,input:focus,select:focus{border-color:var(--accent);background:#fff}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+button{font:inherit;font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:9px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer}
+button:hover{border-color:#c9d2e0}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.primary:hover{filter:brightness(1.07)}
+label.chk{display:flex;align-items:center;gap:7px;font-size:13.5px;color:var(--muted)}
+.out{margin-top:12px;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;min-height:52px;max-height:340px;overflow:auto}
+.status{font-size:13.5px;margin-top:10px}
+.status.ok{color:var(--ok)}.status.err{color:var(--err)}
+section.explain{margin-top:44px;padding-top:30px;border-top:1px solid var(--border)}
+section.explain h2{font-size:21px;margin:26px 0 10px;letter-spacing:-.2px}
+section.explain h2:first-child{margin-top:0}
+section.explain p,section.explain li{color:#333a45;font-size:15px}
+section.explain ul,section.explain ol{margin:10px 0 10px 22px}
+section.explain li{margin:5px 0}
+details{border-top:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:600;font-size:15px}
+details p{margin-top:8px;color:var(--muted);font-size:14.5px}
+footer.site{border-top:1px solid var(--border);margin-top:52px;padding:26px 0 40px;color:var(--muted);font-size:13.5px}
+footer.site a{color:var(--muted);text-decoration:none;margin-right:14px;display:inline-block}
+footer.site a:hover{color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}
+a.card{display:block;padding:14px 16px;border:1px solid var(--border);border-radius:11px;text-decoration:none;color:inherit;background:#fff}
+a.card:hover{border-color:#c9d2e0}
+a.card b{display:block;font-size:14.5px;margin-bottom:3px}
+a.card span{color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <div class="logo">Tool<span>Mint</span></div>
+  <nav>
+    <a href="/tools/">All tools</a>
+    <a href="/pdfmint/">PDF</a>
+    <a href="/pixmint/">Images</a>
+    <a href="/">Home</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <h1>Image Compressor</h1>
+  <p class="lead">Shrink JPG, PNG and WebP files with a quality slider, and see exactly how many bytes each one lost. Files never leave your browser.</p>
+
+  <div class="panel">
+    <div class="row" style="margin-top:0">
+      <input type="file" id="files" accept="image/*" multiple style="flex:1;min-width:240px;font-family:inherit;font-size:13.5px;background:#f7f8fa;border:1px solid #e4e7ec;border-radius:10px;padding:10px"/>
+    </div>
+    <div class="row">
+      <label class="chk">Quality <input type="range" id="q" min="10" max="100" value="75" style="width:150px;margin-left:8px"/><span id="qv" style="margin-left:8px;font-family:ui-monospace,monospace">75</span></label>
+      <label class="chk">Output <select id="fmt" style="width:auto"><option value="image/jpeg">JPEG</option><option value="image/webp">WebP</option><option value="image/png">PNG (lossless)</option></select></label>
+      <label class="chk">Max width <input type="number" id="maxw" value="0" min="0" max="10000" style="width:80px;margin-left:8px"/> px <span style="color:#5b6472">(0 = keep original)</span></label>
+    </div>
+    <div class="row">
+      <button class="primary" id="run">Compress</button>
+      <button id="dl">Download all</button>
+      <button id="clear">Clear</button>
+    </div>
+    <div class="out" id="out" style="font-family:inherit;font-size:13.5px;min-height:56px;max-height:none"></div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <section class="explain">
+    <h2>How it compresses</h2>
+    <p>Each image is decoded, drawn onto a canvas at the size you asked for, and re-encoded by the browser's own image encoder. That re-encode is where the saving happens: JPEG and WebP are lossy formats, so lowering the quality setting discards detail the eye is unlikely to notice while removing a large amount of data.</p>
+    <p>PNG is different. It is a lossless format, so the quality slider does not apply to it — PNG output is only smaller when you also reduce the pixel dimensions. If you want real savings on a photograph, choose JPEG or WebP.</p>
+
+    <h2>Choosing a quality setting</h2>
+    <ul>
+      <li><strong>90–100</strong> — visually indistinguishable from the original for most photos, but the file may barely shrink. The last few percent of quality costs a disproportionate number of bytes.</li>
+      <li><strong>70–85</strong> — the practical sweet spot for photographs published on the web. Typically 60–85% smaller than the original camera file with no visible loss at normal viewing sizes.</li>
+      <li><strong>50–65</strong> — noticeable on close inspection, acceptable for thumbnails and background images.</li>
+      <li><strong>Below 50</strong> — visible blocky artefacts around edges and in gradients. Only for small previews.</li>
+    </ul>
+
+    <h2>JPEG, WebP or PNG?</h2>
+    <table style="width:100%;border-collapse:collapse;margin:12px 0;font-size:14.5px">
+      <tr style="text-align:left"><th style="padding:6px 8px;border-bottom:1px solid #e4e7ec">Format</th><th style="padding:6px 8px;border-bottom:1px solid #e4e7ec">Best for</th><th style="padding:6px 8px;border-bottom:1px solid #e4e7ec">Transparency</th></tr>
+      <tr><td style="padding:6px 8px">JPEG</td><td style="padding:6px 8px">Photographs, anywhere compatibility matters</td><td style="padding:6px 8px">No</td></tr>
+      <tr><td style="padding:6px 8px">WebP</td><td style="padding:6px 8px">Everything on the modern web; 25–35% smaller than JPEG at equal quality</td><td style="padding:6px 8px">Yes</td></tr>
+      <tr><td style="padding:6px 8px">PNG</td><td style="padding:6px 8px">Screenshots, logos, line art, anything with flat colour or text</td><td style="padding:6px 8px">Yes</td></tr>
+    </table>
+    <p>Note the transparency warning: JPEG cannot store an alpha channel, so transparent areas are filled with white here. If your image has a transparent background, use WebP or PNG instead.</p>
+
+    <h2>Why compressing twice is a bad idea</h2>
+    <p>Every lossy re-encode discards a little more detail, permanently. Compressing an already-compressed JPEG at 70% does not halve the file again — it adds another generation of artefacts on top of the ones already there. Always compress from the original file if you can, and keep a copy of the original.</p>
+
+    <h2>FAQ</h2>
+    <details open><summary>Are my images uploaded?</summary><p>No. Decoding and encoding both happen in this tab with the Canvas API. You can disconnect from the internet after the page loads and it will keep working.</p></details>
+    <details><summary>Why did my PNG get bigger?</summary><p>The browser's PNG encoder may use different compression settings than the tool that made your original. For a large flat-colour PNG, exporting as WebP instead usually wins.</p></details>
+    <details><summary>Is there a file size limit?</summary><p>Only your device's memory. Very large images — above roughly 50 megapixels — may fail on a canvas size limit that browsers impose for safety.</p></details>
+    <details><summary>Can I compress many images at once?</summary><p>Yes. Select multiple files, adjust the settings once, and press Compress. Use Download all to save them together — your browser may ask permission to download multiple files.</p></details>
+  </section>
+</main>
+
+<section class="explain wrap" style="border-top:1px solid var(--border)">
+  <h2>Related tools</h2>
+  <div class="cards">
+    <a class="card" href="/image-resizer.html"><b>Image Resizer</b><span>Resize images to exact pixels or social media presets.</span></a>
+  </div>
+</section>
+
+<footer class="site"><div class="wrap">
+  <a href="/tools/">All tools</a><a href="/pdfmint/">PDF tools</a><a href="/pixmint/">Image tools</a><a href="/">Home</a>
+  <p style="margin-top:10px">Everything runs in your browser. Nothing is uploaded.</p>
+</div></footer>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  function say(msg, cls){ var s = $('status'); if(!s) return; s.textContent = msg || ''; s.className = 'status' + (cls ? ' ' + cls : ''); }
+  function copy(text, btn){
+    navigator.clipboard.writeText(text).then(function(){
+      var old = btn.textContent; btn.textContent = '✓ Copied';
+      setTimeout(function(){ btn.textContent = old; }, 1400);
+    }).catch(function(){ say('Copy failed — select the text and copy manually.', 'err'); });
+  }
+  var picked = [];
+  var results = [];
+  $('q').addEventListener('input', function(){ $('qv').textContent = $('q').value; });
+
+  $('files').addEventListener('change', function(e){
+    picked = Array.prototype.slice.call(e.target.files || []);
+    results = [];
+    if (!picked.length) { say('No files selected.', 'err'); return; }
+    say(picked.length + ' image' + (picked.length === 1 ? '' : 's') + ' ready — press Compress', 'ok');
+    $('out').textContent = picked.map(function(f){ return '  ' + f.name + '  ' + fmtBytes(f.size); }).join('\n');
+  });
+
+  function fmtBytes(n){
+    if (n < 1024) return n + ' B';
+    if (n < 1024 * 1024) return (n / 1024).toFixed(1) + ' KB';
+    return (n / 1024 / 1024).toFixed(2) + ' MB';
+  }
+  function loadImage(file){
+    return new Promise(function(res, rej){
+      var url = URL.createObjectURL(file);
+      var img = new Image();
+      img.onload = function(){ URL.revokeObjectURL(url); res(img); };
+      img.onerror = function(){ URL.revokeObjectURL(url); rej(new Error('not an image')); };
+      img.src = url;
+    });
+  }
+  function compress(img, type, quality, maxw){
+    var w = img.naturalWidth, h = img.naturalHeight;
+    if (maxw > 0 && w > maxw) { h = Math.round(h * (maxw / w)); w = maxw; }
+    var c = document.createElement('canvas');
+    c.width = w; c.height = h;
+    var ctx = c.getContext('2d');
+    // JPEG has no alpha channel: paint white first so transparency does not turn black
+    if (type === 'image/jpeg') { ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, w, h); }
+    ctx.drawImage(img, 0, 0, w, h);
+    return new Promise(function(res){
+      c.toBlob(function(b){ res({ blob: b, w: w, h: h }); }, type, type === 'image/png' ? undefined : quality);
+    });
+  }
+
+  $('run').onclick = async function(){
+    if (!picked.length) { say('✗ Choose one or more images first.', 'err'); return; }
+    var type = $('fmt').value, quality = (+$('q').value) / 100, maxw = +$('maxw').value || 0;
+    results = [];
+    var lines = [];
+    var totalIn = 0, totalOut = 0;
+    $('out').textContent = 'Working…';
+
+    for (var i = 0; i < picked.length; i++) {
+      var f = picked[i];
+      try {
+        var img = await loadImage(f);
+        var r = await compress(img, type, quality, maxw);
+        var saved = f.size - r.blob.size;
+        var pct = f.size ? Math.round((saved / f.size) * 100) : 0;
+        totalIn += f.size; totalOut += r.blob.size;
+        results.push({ name: f.name.replace(/\.[^.]+$/, '') + '.' + (type === 'image/png' ? 'png' : type === 'image/webp' ? 'webp' : 'jpg'), blob: r.blob, w: r.w, h: r.h });
+        lines.push(
+          (pct >= 0 ? '✅ ' : '⚠️ ') + f.name +
+          '\n     ' + fmtBytes(f.size) + '  →  ' + fmtBytes(r.blob.size) +
+          '   (' + (pct >= 0 ? '−' + pct + '%' : '+' + Math.abs(pct) + '%') + ')' +
+          '    ' + r.w + '×' + r.h
+        );
+      } catch (e) {
+        lines.push('❌ ' + f.name + '  — not a readable image');
+      }
+    }
+    var tp = totalIn ? Math.round(((totalIn - totalOut) / totalIn) * 100) : 0;
+    $('out').innerHTML = lines.join('\n') +
+      '\n\n<strong>Total: ' + fmtBytes(totalIn) + ' → ' + fmtBytes(totalOut) +
+      '  (saved ' + fmtBytes(totalIn - totalOut) + ', ' + tp + '%)</strong>' +
+      (totalOut > totalIn ? '<br><span style="color:#b91c1c">Output is larger than input — the original was already well compressed. Try a lower quality or keep the originals.</span>' : '');
+    say('✓ Done — ' + results.length + ' of ' + picked.length + ' compressed', 'ok');
+  };
+
+  function saveBlob(blob, name){
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = name;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  }
+  $('dl').onclick = function(){
+    if (!results.length) { say('✗ Nothing to download yet.', 'err'); return; }
+    results.forEach(function(r, i){ setTimeout(function(){ saveBlob(r.blob, r.name); }, i * 300); });
+    say('✓ Downloading ' + results.length + ' file' + (results.length === 1 ? '' : 's'), 'ok');
+  };
+  $('clear').onclick = function(){
+    picked = []; results = []; $('files').value = ''; $('out').textContent = ''; say('');
+  };
+})();
+</script>
+</body>
+</html>
