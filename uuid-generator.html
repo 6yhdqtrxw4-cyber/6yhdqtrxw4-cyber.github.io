@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UUID Generator — Generate Random v4 UUIDs and GUIDs Online</title>
+<meta name="description" content="Generate one or thousands of random version 4 UUIDs using the Web Crypto API. Uppercase, braces or no-dash formats. Runs entirely in your browser."/>
+<meta name="keywords" content="uuid generator, guid generator, random uuid, uuid v4, generate guid online, unique id generator"/>
+<link rel="canonical" href="https://6yhdqtrxw4-cyber.github.io/uuid-generator.html"/>
+<meta property="og:title" content="UUID Generator — Generate Random v4 UUIDs and GUIDs Online"/>
+<meta property="og:description" content="Generate one or thousands of random version 4 UUIDs using the Web Crypto API. Uppercase, braces or no-dash formats. Runs entirely in your browser."/>
+<meta property="og:type" content="website"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"UUID / GUID Generator","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Generate one or thousands of random version 4 UUIDs using the Web Crypto API. Uppercase, braces or no-dash formats. Runs entirely in your browser."}
+</script>
+<style>
+:root{--bg:#ffffff;--soft:#f7f8fa;--panel:#ffffff;--text:#16181d;--muted:#5b6472;--border:#e4e7ec;--accent:#2563eb;--accent-soft:#eff4ff;--ok:#15803d;--err:#b91c1c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.site{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:5}
+header.site .wrap{display:flex;align-items:center;gap:14px;padding:12px 20px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:17px;letter-spacing:-.2px}
+.logo span{color:var(--accent)}
+header.site nav{margin-left:auto;display:flex;gap:14px;font-size:13.5px;flex-wrap:wrap}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover{color:var(--accent)}
+main{padding:34px 0 10px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.5px;margin-bottom:10px}
+.lead{color:var(--muted);font-size:16.5px;margin-bottom:24px;max-width:660px}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px}
+textarea,input[type=text],input[type=number],select{width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;line-height:1.6;color:var(--text);background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;outline:none}
+textarea{min-height:210px;resize:vertical}
+textarea:focus,input:focus,select:focus{border-color:var(--accent);background:#fff}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+button{font:inherit;font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:9px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer}
+button:hover{border-color:#c9d2e0}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.primary:hover{filter:brightness(1.07)}
+label.chk{display:flex;align-items:center;gap:7px;font-size:13.5px;color:var(--muted)}
+.out{margin-top:12px;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;min-height:52px;max-height:340px;overflow:auto}
+.status{font-size:13.5px;margin-top:10px}
+.status.ok{color:var(--ok)}.status.err{color:var(--err)}
+section.explain{margin-top:44px;padding-top:30px;border-top:1px solid var(--border)}
+section.explain h2{font-size:21px;margin:26px 0 10px;letter-spacing:-.2px}
+section.explain h2:first-child{margin-top:0}
+section.explain p,section.explain li{color:#333a45;font-size:15px}
+section.explain ul,section.explain ol{margin:10px 0 10px 22px}
+section.explain li{margin:5px 0}
+details{border-top:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:600;font-size:15px}
+details p{margin-top:8px;color:var(--muted);font-size:14.5px}
+footer.site{border-top:1px solid var(--border);margin-top:52px;padding:26px 0 40px;color:var(--muted);font-size:13.5px}
+footer.site a{color:var(--muted);text-decoration:none;margin-right:14px;display:inline-block}
+footer.site a:hover{color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}
+a.card{display:block;padding:14px 16px;border:1px solid var(--border);border-radius:11px;text-decoration:none;color:inherit;background:#fff}
+a.card:hover{border-color:#c9d2e0}
+a.card b{display:block;font-size:14.5px;margin-bottom:3px}
+a.card span{color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <div class="logo">Tool<span>Mint</span></div>
+  <nav>
+    <a href="/tools/">All tools</a>
+    <a href="/pdfmint/">PDF</a>
+    <a href="/pixmint/">Images</a>
+    <a href="/">Home</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <h1>UUID / GUID Generator</h1>
+  <p class="lead">Generate cryptographically random version 4 UUIDs in bulk, in the case and format you need.</p>
+
+  <div class="panel">
+    <div class="row" style="margin-top:0">
+      <label class="chk">How many <input type="number" id="n" value="10" min="1" max="10000" style="width:90px;margin-left:8px"/></label>
+      <label class="chk"><input type="checkbox" id="upper"/> UPPERCASE</label>
+      <label class="chk"><input type="checkbox" id="braces"/> {braces}</label>
+      <label class="chk"><input type="checkbox" id="nodash"/> No dashes (32 hex)</label>
+      <label class="chk"><input type="checkbox" id="quotes"/> Wrap in quotes</label>
+      <label class="chk"><input type="checkbox" id="comma"/> Comma-separated</label>
+    </div>
+    <div class="row">
+      <button class="primary" id="run">Generate</button>
+      <button id="copy">Copy all</button>
+      <button id="dl">Download .txt</button>
+    </div>
+    <div class="out" id="out" style="font-family:ui-monospace,monospace;min-height:120px;max-height:400px;overflow:auto"></div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <section class="explain">
+    <h2>What a UUID is</h2>
+    <p>A UUID — universally unique identifier, called a GUID in Microsoft environments — is a 128-bit number written as 32 hexadecimal digits in five groups: <code>f81d4fae-7dec-11d0-a765-00a0c91e6bf6</code>. Those 32 digits give about 3.4 × 10³⁸ possible values, which is enough that generating one at random is effectively guaranteed to be unique without any central authority to check against.</p>
+    <p>That decentralisation is the whole point. Two systems that have never spoken to each other can each mint identifiers and never collide, which is why UUIDs are used for database primary keys, distributed tracing, and anything synced across devices without a coordinator.</p>
+
+    <h2>Which version is this?</h2>
+    <p>This tool generates <strong>version 4</strong>, the random variant. The version is encoded in the first character of the third group, and the variant in the first character of the fourth — so inspecting a UUID tells you how it was made:</p>
+    <ul>
+      <li><strong>v1</strong> — based on the timestamp and the machine's MAC address. Sortable, but it leaks when and where it was made.</li>
+      <li><strong>v4</strong> — 122 bits of randomness, the rest being version and variant bits. What you want in almost every case.</li>
+      <li><strong>v5</strong> — a hash of a namespace plus a name, so the same input always gives the same UUID. Useful for deterministic ids.</li>
+      <li><strong>v7</strong> — a timestamp prefix followed by randomness. Newer, and popular for database keys because it sorts chronologically while staying unpredictable.</li>
+    </ul>
+
+    <h2>Why the randomness source matters</h2>
+    <p>A predictable identifier is a security problem, not just a correctness one. If an attacker can guess the next id — because it comes from a counter, a timestamp, or <code>Math.random()</code> — then unguessable URLs stop being access control, and they can enumerate your records. This tool uses <code>crypto.randomUUID()</code>, or <code>crypto.getRandomValues()</code> where that is unavailable, both of which draw from the operating system's cryptographic generator.</p>
+
+    <h2>Format variations you will meet</h2>
+    <ul>
+      <li><strong>Standard</strong> — lowercase, with dashes. The RFC 4122 canonical form.</li>
+      <li><strong>No dashes</strong> — 32 hexadecimal characters, used by some APIs and many database column types.</li>
+      <li><strong>Braces</strong> — <code>{...}</code>, the .NET and Windows registry convention.</li>
+      <li><strong>Uppercase</strong> — common in Oracle and in older Microsoft documentation.</li>
+    </ul>
+    <p>These are all the same value. Case and punctuation are formatting, not data — which is why a system that compares UUIDs as case-sensitive strings is holding a bug.</p>
+
+    <h2>FAQ</h2>
+    <details open><summary>Can two generated UUIDs collide?</summary><p>Mathematically yes, practically no. You would need to generate about 2.7 × 10¹⁸ v4 UUIDs before a 50% chance of any collision. For scale, generating a billion per second, that takes around 85 years.</p></details>
+    <details><summary>Is a UUID safe to use as a secret?</summary><p>No. Randomness makes it unguessable, but it is an identifier, not a credential — it is logged, indexed, cached and shared. Use a purpose-built token for secrets, and still enforce authorisation on the server.</p></details>
+    <details><summary>Should I use a UUID as a database primary key?</summary><p>It works, but randomly ordered keys hurt insert performance on clustered indexes because each new row lands in a random part of the index. If that matters, use UUID v7 or a ULID, which are time-ordered.</p></details>
+    <details><summary>Does anything leave my browser?</summary><p>No. Generation uses the Web Crypto API, which is local to the page.</p></details>
+  </section>
+</main>
+
+<section class="explain wrap" style="border-top:1px solid var(--border)">
+  <h2>Related tools</h2>
+  <div class="cards">
+    <a class="card" href="/color-converter.html"><b>Color Converter — HEX, RGB, HSL and HSV</b><span>Convert HEX, RGB, HSL and HSV with contrast checks.</span></a>
+    <a class="card" href="/hash-generator.html"><b>Hash Generator — SHA-256, SHA-384, SHA-512 and SHA-1</b><span>Generate SHA-256, SHA-384, SHA-512 and SHA-1 hashes.</span></a>
+    <a class="card" href="/jwt-decoder.html"><b>JWT Decoder</b><span>Decode a JWT header and payload, with expiry checks.</span></a>
+    <a class="card" href="/password-generator.html"><b>Password Generator</b><span>Generate strong random passwords and passphrases.</span></a>
+    <a class="card" href="/timestamp-converter.html"><b>Unix Timestamp Converter</b><span>Convert epoch timestamps to dates and back.</span></a>
+  </div>
+</section>
+
+<footer class="site"><div class="wrap">
+  <a href="/tools/">All tools</a><a href="/pdfmint/">PDF tools</a><a href="/pixmint/">Image tools</a><a href="/">Home</a>
+  <p style="margin-top:10px">Everything runs in your browser. Nothing is uploaded.</p>
+</div></footer>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  function say(msg, cls){ var s = $('status'); if(!s) return; s.textContent = msg || ''; s.className = 'status' + (cls ? ' ' + cls : ''); }
+  function copy(text, btn){
+    navigator.clipboard.writeText(text).then(function(){
+      var old = btn.textContent; btn.textContent = '✓ Copied';
+      setTimeout(function(){ btn.textContent = old; }, 1400);
+    }).catch(function(){ say('Copy failed — select the text and copy manually.', 'err'); });
+  }
+  function uuidv4(){
+    if (crypto.randomUUID) return crypto.randomUUID();
+    var b = new Uint8Array(16);
+    crypto.getRandomValues(b);
+    b[6] = (b[6] & 0x0f) | 0x40;   // version 4
+    b[8] = (b[8] & 0x3f) | 0x80;   // variant 10xx
+    var h = [];
+    for (var i = 0; i < 16; i++) h.push(b[i].toString(16).padStart(2, '0'));
+    return h.slice(0,4).join('') + '-' + h.slice(4,6).join('') + '-' + h.slice(6,8).join('') + '-' + h.slice(8,10).join('') + '-' + h.slice(10,16).join('');
+  }
+  function transform(u){
+    if ($('nodash').checked) u = u.replace(/-/g, '');
+    if ($('upper').checked) u = u.toUpperCase();
+    if ($('braces').checked) u = '{' + u + '}';
+    if ($('quotes').checked) u = '"' + u + '"';
+    return u;
+  }
+  var last = [];
+  $('run').onclick = function(){
+    var n = Math.max(1, Math.min(10000, +$('n').value || 1));
+    last = [];
+    for (var i = 0; i < n; i++) last.push(transform(uuidv4()));
+    $('out').textContent = $('comma').checked ? last.join(', ') : last.join('\n');
+    say('✓ Generated ' + n + ' version 4 UUID' + (n === 1 ? '' : 's'), 'ok');
+  };
+  $('copy').onclick = function(){
+    if (!last.length) { say('✗ Generate some first.', 'err'); return; }
+    copy($('out').textContent, $('copy'));
+  };
+  $('dl').onclick = function(){
+    if (!last.length) { say('✗ Generate some first.', 'err'); return; }
+    var blob = new Blob([last.join('\n')], { type: 'text/plain' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = 'uuids.txt';
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+    say('✓ Downloaded ' + last.length + ' UUIDs', 'ok');
+  };
+  ['upper','braces','nodash','quotes'].forEach(function(id){
+    $(id).addEventListener('change', function(){ if (last.length) $('run').click(); });
+  });
+  $('run').click();
+})();
+</script>
+</body>
+</html>
