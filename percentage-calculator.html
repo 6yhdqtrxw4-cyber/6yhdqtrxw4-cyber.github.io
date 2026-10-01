@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Percentage Calculator — Percent Of, Increase, Decrease and Change</title>
+<meta name="description" content="Work out percentages in every direction: X% of Y, what percent X is of Y, percentage increase and decrease, and reverse percentages. Instant, with the formula shown."/>
+<meta name="keywords" content="percentage calculator, percent of, percentage increase calculator, percentage decrease, percentage change, what percent is"/>
+<link rel="canonical" href="https://6yhdqtrxw4-cyber.github.io/percentage-calculator.html"/>
+<meta property="og:title" content="Percentage Calculator — Percent Of, Increase, Decrease and Change"/>
+<meta property="og:description" content="Work out percentages in every direction: X% of Y, what percent X is of Y, percentage increase and decrease, and reverse percentages. Instant, with the formula shown."/>
+<meta property="og:type" content="website"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Percentage Calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Work out percentages in every direction: X% of Y, what percent X is of Y, percentage increase and decrease, and reverse percentages. Instant, with the formula shown."}
+</script>
+<style>
+:root{--bg:#ffffff;--soft:#f7f8fa;--panel:#ffffff;--text:#16181d;--muted:#5b6472;--border:#e4e7ec;--accent:#2563eb;--accent-soft:#eff4ff;--ok:#15803d;--err:#b91c1c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.site{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:5}
+header.site .wrap{display:flex;align-items:center;gap:14px;padding:12px 20px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:17px;letter-spacing:-.2px}
+.logo span{color:var(--accent)}
+header.site nav{margin-left:auto;display:flex;gap:14px;font-size:13.5px;flex-wrap:wrap}
+header.site nav a{color:var(--muted);text-decoration:none}
+header.site nav a:hover{color:var(--accent)}
+main{padding:34px 0 10px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.5px;margin-bottom:10px}
+.lead{color:var(--muted);font-size:16.5px;margin-bottom:24px;max-width:660px}
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px}
+textarea,input[type=text],input[type=number],select{width:100%;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;line-height:1.6;color:var(--text);background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;outline:none}
+textarea{min-height:210px;resize:vertical}
+textarea:focus,input:focus,select:focus{border-color:var(--accent);background:#fff}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+button{font:inherit;font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:9px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer}
+button:hover{border-color:#c9d2e0}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.primary:hover{filter:brightness(1.07)}
+label.chk{display:flex;align-items:center;gap:7px;font-size:13.5px;color:var(--muted)}
+.out{margin-top:12px;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:12px;min-height:52px;max-height:340px;overflow:auto}
+.status{font-size:13.5px;margin-top:10px}
+.status.ok{color:var(--ok)}.status.err{color:var(--err)}
+section.explain{margin-top:44px;padding-top:30px;border-top:1px solid var(--border)}
+section.explain h2{font-size:21px;margin:26px 0 10px;letter-spacing:-.2px}
+section.explain h2:first-child{margin-top:0}
+section.explain p,section.explain li{color:#333a45;font-size:15px}
+section.explain ul,section.explain ol{margin:10px 0 10px 22px}
+section.explain li{margin:5px 0}
+details{border-top:1px solid var(--border);padding:14px 2px}
+details summary{cursor:pointer;font-weight:600;font-size:15px}
+details p{margin-top:8px;color:var(--muted);font-size:14.5px}
+footer.site{border-top:1px solid var(--border);margin-top:52px;padding:26px 0 40px;color:var(--muted);font-size:13.5px}
+footer.site a{color:var(--muted);text-decoration:none;margin-right:14px;display:inline-block}
+footer.site a:hover{color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}
+a.card{display:block;padding:14px 16px;border:1px solid var(--border);border-radius:11px;text-decoration:none;color:inherit;background:#fff}
+a.card:hover{border-color:#c9d2e0}
+a.card b{display:block;font-size:14.5px;margin-bottom:3px}
+a.card span{color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <div class="logo">Tool<span>Mint</span></div>
+  <nav>
+    <a href="/tools/">All tools</a>
+    <a href="/pdfmint/">PDF</a>
+    <a href="/pixmint/">Images</a>
+    <a href="/">Home</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <h1>Percentage Calculator</h1>
+  <p class="lead">Five percentage calculators in one, each one showing the formula it used so you can check the arithmetic.</p>
+
+  <div class="panel">
+    <div class="out" id="out" style="font-family:inherit;font-size:14px;min-height:0;max-height:none"></div>
+    <div class="row" style="margin-top:14px"><strong>1 · What is X% of Y?</strong></div>
+    <div class="row">
+      <input type="number" id="a1" value="15" style="width:110px"/> % of
+      <input type="number" id="b1" value="240" style="width:130px"/>
+      <button class="primary" data-calc="1">=</button>
+      <span id="r1" style="font-family:ui-monospace,monospace;font-size:16px"></span>
+    </div>
+    <div class="row" style="margin-top:14px"><strong>2 · X is what percent of Y?</strong></div>
+    <div class="row">
+      <input type="number" id="a2" value="45" style="width:110px"/> is what % of
+      <input type="number" id="b2" value="180" style="width:130px"/>
+      <button class="primary" data-calc="2">=</button>
+      <span id="r2" style="font-family:ui-monospace,monospace;font-size:16px"></span>
+    </div>
+    <div class="row" style="margin-top:14px"><strong>3 · Percentage change from X to Y</strong></div>
+    <div class="row">
+      from <input type="number" id="a3" value="80" style="width:110px"/> to
+      <input type="number" id="b3" value="100" style="width:130px"/>
+      <button class="primary" data-calc="3">=</button>
+      <span id="r3" style="font-family:ui-monospace,monospace;font-size:16px"></span>
+    </div>
+    <div class="row" style="margin-top:14px"><strong>4 · Increase / decrease X by Y%</strong></div>
+    <div class="row">
+      <input type="number" id="a4" value="200" style="width:110px"/> changed by
+      <input type="number" id="b4" value="-15" style="width:110px"/> %
+      <button class="primary" data-calc="4">=</button>
+      <span id="r4" style="font-family:ui-monospace,monospace;font-size:16px"></span>
+    </div>
+    <div class="row" style="margin-top:14px"><strong>5 · Reverse: X is Y% of what?</strong></div>
+    <div class="row">
+      <input type="number" id="a5" value="30" style="width:110px"/> is
+      <input type="number" id="b5" value="12" style="width:110px"/> % of
+      <button class="primary" data-calc="5">=</button>
+      <span id="r5" style="font-family:ui-monospace,monospace;font-size:16px"></span>
+    </div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <section class="explain">
+    <h2>The five questions people actually ask</h2>
+    <p>Almost every percentage problem is one of these, and mixing them up is the usual source of wrong answers:</p>
+    <ul>
+      <li><strong>"What is 15% of 240?"</strong> — multiply. <code>15 ÷ 100 × 240 = 36</code>.</li>
+      <li><strong>"45 is what percent of 180?"</strong> — divide, then multiply by 100. <code>45 ÷ 180 × 100 = 25%</code>. The trap is dividing the wrong way round; the number after "of" is always the denominator.</li>
+      <li><strong>"Prices went from 80 to 100 — by how much?"</strong> — the change divided by the <em>starting</em> value. <code>(100 − 80) ÷ 80 × 100 = +25%</code>. Using the final value as the denominator is the single most common percentage mistake.</li>
+      <li><strong>"200 increased by −15%"</strong> — multiply by <code>1 + (−15/100)</code>, giving 170. A negative percentage here is just a decrease.</li>
+      <li><strong>"30 is 12% of what?"</strong> — divide by the rate. <code>30 ÷ 0.12 = 250</code>.</li>
+    </ul>
+
+    <h2>Why increases and decreases are not symmetric</h2>
+    <p>A 50% loss needs a 100% gain to recover. Drop from 100 to 50 — that is −50% — and getting back to 100 requires +100%, because the percentages are measured against different bases. This asymmetry is why "the market fell 30%, then rose 30%" does not leave you where you started: 100 → 70 → 91, still down 9%.</p>
+    <p>The same reasoning explains why a discount and a markup do not cancel. Adding 20% then taking 20% off gives 96, not 100.</p>
+
+    <h2>Percentage points are not percentages</h2>
+    <p>If a rate rises from 4% to 5%, that is an increase of <strong>one percentage point</strong> but a <strong>25% relative increase</strong> (1 ÷ 4). Both statements are true and they sound very different, which is exactly why the distinction gets abused in reporting. The rule: use <em>percentage points</em> when comparing two percentages; use <em>percent</em> when comparing a value to its own starting point.</p>
+
+    <h2>FAQ</h2>
+    <details open><summary>How do I add a percentage to a number quickly?</summary><p>Multiply by one plus the rate. To add 8%, multiply by 1.08. To subtract 8%, multiply by 0.92. Doing the addition and subtraction in separate steps invites rounding errors.</p></details>
+    <details><summary>What is the difference between percent and per mille?</summary><p>Per mille (‰) is tenths of a percent: 5‰ is 0.5%. It is used for things like birth rates and blood alcohol limits, where percentages are inconveniently small.</p></details>
+    <details><summary>Can a percentage change exceed 100%?</summary><p>Increases can — going from 10 to 35 is +250%. Decreases cannot go below −100%, since that would mean passing zero into a negative value.</p></details>
+    <details><summary>Why does the calculator show a formula?</summary><p>So you can verify the result rather than trust it. Every number here comes from the browser's own arithmetic, but a formula you can read is the difference between using a tool and depending on it.</p></details>
+  </section>
+</main>
+
+
+
+<footer class="site"><div class="wrap">
+  <a href="/tools/">All tools</a><a href="/pdfmint/">PDF tools</a><a href="/pixmint/">Image tools</a><a href="/">Home</a>
+  <p style="margin-top:10px">Everything runs in your browser. Nothing is uploaded.</p>
+</div></footer>
+
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  function say(msg, cls){ var s = $('status'); if(!s) return; s.textContent = msg || ''; s.className = 'status' + (cls ? ' ' + cls : ''); }
+  function copy(text, btn){
+    navigator.clipboard.writeText(text).then(function(){
+      var old = btn.textContent; btn.textContent = '✓ Copied';
+      setTimeout(function(){ btn.textContent = old; }, 1400);
+    }).catch(function(){ say('Copy failed — select the text and copy manually.', 'err'); });
+  }
+  function num(id){ var v = parseFloat($(id).value); return isNaN(v) ? null : v; }
+  function n(x){
+    if (!isFinite(x)) return '—';
+    var r = Math.round(x * 1e6) / 1e6;
+    return String(r).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  function pct(x){ return n(x) + '%'; }
+
+  var CALC = {
+    1: function(){
+      var a = num('a1'), b = num('b1');
+      if (a === null || b === null) return { err: 'Enter both numbers.' };
+      return { r: n(a / 100 * b), f: a + '% × ' + n(b) + ' = ' + n(a / 100) + ' × ' + n(b) };
+    },
+    2: function(){
+      var a = num('a2'), b = num('b2');
+      if (a === null || b === null) return { err: 'Enter both numbers.' };
+      if (b === 0) return { err: 'The second number cannot be zero.' };
+      return { r: pct(a / b * 100), f: n(a) + ' ÷ ' + n(b) + ' × 100 = ' + pct(a / b * 100) };
+    },
+    3: function(){
+      var a = num('a3'), b = num('b3');
+      if (a === null || b === null) return { err: 'Enter both numbers.' };
+      if (a === 0) return { err: 'The starting value cannot be zero — percentage change from zero is undefined.' };
+      var d = (b - a) / Math.abs(a) * 100;
+      return { r: (d >= 0 ? '+' : '') + pct(d), f: '(' + n(b) + ' − ' + n(a) + ') ÷ ' + n(Math.abs(a)) + ' × 100',
+               note: d > 0 ? 'an increase' : d < 0 ? 'a decrease' : 'no change' };
+    },
+    4: function(){
+      var a = num('a4'), b = num('b4');
+      if (a === null || b === null) return { err: 'Enter both numbers.' };
+      var out = a * (1 + b / 100);
+      return { r: n(out), f: n(a) + ' × (1 ' + (b >= 0 ? '+ ' : '− ') + Math.abs(b) + '/100) = ' + n(out),
+               note: 'change of ' + n(out - a) };
+    },
+    5: function(){
+      var a = num('a5'), b = num('b5');
+      if (a === null || b === null) return { err: 'Enter both numbers.' };
+      if (b === 0) return { err: 'The percentage cannot be zero.' };
+      return { r: n(a / (b / 100)), f: n(a) + ' ÷ (' + n(b) + ' ÷ 100) = ' + n(a / (b / 100)) };
+    }
+  };
+
+  function run(k){
+    var res = CALC[k]();
+    if (res.err) { $('r' + k).textContent = ''; say('✗ ' + res.err, 'err'); return; }
+    $('r' + k).textContent = '= ' + res.r + (res.note ? '  (' + res.note + ')' : '');
+    say(res.f, 'ok');
+  }
+  document.querySelectorAll('button[data-calc]').forEach(function(b){
+    b.addEventListener('click', function(){ run(b.getAttribute('data-calc')); });
+  });
+  document.querySelectorAll('input[type=number]').forEach(function(i){
+    i.addEventListener('input', function(){
+      var k = i.id.slice(1);
+      if ($('r' + k).textContent) run(k);
+    });
+  });
+  run(1);
+})();
+</script>
+</body>
+</html>
